@@ -7,25 +7,27 @@ pipelines:
   default:
     - step:
         name: Build and Test
-        services:
-          - docker
         caches:
           - dotnetcore
+        services:
+          - docker
         script:
-          - apk add --no-cache docker-compose
-          - docker version
+          - apk add --no-cache docker-cli-compose
+          - docker info
           - dotnet restore
           - dotnet build --configuration Release
           - dotnet test --configuration Release
 
     - step:
         name: Build Docker Image
+        caches:
+          - dotnetcore
         services:
           - docker
         script:
           - docker build -t your-dockerhub-username/your-image-name:your-tag .
-          - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-          - docker push $DOCKER_USERNAME/hotelbook:api
+          - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER_NAME --password-stdin
+          - docker push $DOCKER_USER_NAME/$IMAGE_NAME:$TAG
 
 definitions:
   services:
