@@ -8,7 +8,7 @@ pipelines:
           - dotnetcore
         script:
           - apt-get update && apt-get install -y docker.io docker-compose
-          - docker info
+          - docker -H tcp://localhost:2376 info
           - dotnet restore
           - dotnet build --configuration Release
           - dotnet test --configuration Release
@@ -19,7 +19,7 @@ pipelines:
           - dotnetcore
         script:
           - apt-get update && apt-get install -y docker.io docker-compose
-          - docker info
+          - docker -H tcp://localhost:2376 info
           - docker build -t $DOCKER_USER_NAME/$IMAGE_NAME:$TAG .
           - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER_NAME --password-stdin
           - docker push $DOCKER_USER_NAME/$IMAGE_NAME:$TAG
