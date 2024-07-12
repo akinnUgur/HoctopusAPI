@@ -13,8 +13,8 @@ COPY ["./HotelBookAPI/Application/HotelBookAPI.Application/HotelBookAPI.Applicat
 COPY ["./HotelBookAPI/Infrastructure/HotelBookAPI.Infrastructure/HotelBookAPI.Infrastructure.csproj", "./HotelBookAPI/Infrastructure/HotelBookAPI.Infrastructure/"]
 RUN dotnet restore "./HotelBookAPI/Presentation/HotelBookAPI.API/HotelBookAPI.API.csproj"
 COPY . .
-WORKDIR "./HotelBookAPI/Presentation/HotelBookAPI.API"
-RUN dotnet build "./HotelBookAPI/Presentation/HotelBookAPI.API/HotelBookAPI.API.csproj" -c Release -o /app/build
+WORKDIR "/src/HotelBookAPI/Presentation/HotelBookAPI.API"
+RUN dotnet build -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
