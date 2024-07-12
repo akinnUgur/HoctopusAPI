@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{67775809-1A6E-4BB9-B308-42FFABD739F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookAPI.Application", "Application\HotelBookAPI.Application\HotelBookAPI.Application.csproj", "{B15CBEAE-20D6-4AEC-A05E-BFD4069F542F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBookAPI.Application", "Application\HotelBookAPI.Application\HotelBookAPI.Application.csproj", "{B15CBEAE-20D6-4AEC-A05E-BFD4069F542F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookAPI.Infrastructure", "Infrastructure\HotelBookAPI.Infrastructure\HotelBookAPI.Infrastructure.csproj", "{0326797D-4639-458A-851B-67CECA025667}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBookAPI.Infrastructure", "Infrastructure\HotelBookAPI.Infrastructure\HotelBookAPI.Infrastructure.csproj", "{0326797D-4639-458A-851B-67CECA025667}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookAPI.API", "Presentation\HotelBookAPI.API\HotelBookAPI.API.csproj", "{820407B7-24AF-408A-A8E3-3B4E86201C6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBookAPI.API", "Presentation\HotelBookAPI.API\HotelBookAPI.API.csproj", "{820407B7-24AF-408A-A8E3-3B4E86201C6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
