@@ -1,0 +1,25 @@
+image: atlassian/default-image:3
+
+pipelines:
+  default:
+    - step:
+        name: Build and Test
+        caches:
+          - dotnetcore
+        script:
+          - apt-get update && apt-get install -y docker.io
+          - docker version
+          - dotnet restore
+          - dotnet build --configuration Release
+          - dotnet test --configuration Release
+
+    - step:
+        name: Build Docker Image
+        script:
+          - docker build -t your-dockerhub-username/your-image-name .
+          - docker login -u akinnugur -p Ljusa728++
+          - docker push akinnugur/hotelApiImage
+
+definitions:
+  caches:
+    dotnetcore: ~/.nuget/packages
