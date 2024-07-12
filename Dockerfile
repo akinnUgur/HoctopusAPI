@@ -10,7 +10,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["./HotelBookAPI/Presentation/HotelBookAPI.API.csproj", "./HotelBookAPI/Presentation/HotelBookAPI.API/"]
 COPY ["./HotelBookAPI/Application/HotelBookAPI.Application.csproj", "./HotelBookAPI/Application/HotelBookAPI.Application/"]
-COPY ["./HotelBookAPI/Infrastructure/HotelBookAPI.Infrastructure.csproj", "./HotelBookAPI/Infrastructure/HotelBookAPI.Infrastructure/"]
+COPY ["./HotelBookAPI/Infrastructure/HotelBookAPI.Infrastructure/HotelBookAPI.Infrastructure.csproj", "./HotelBookAPI/Infrastructure/HotelBookAPI.Infrastructure/"]
 RUN dotnet restore "./Presentation/HotelBookAPI.API/HotelBookAPI.API.csproj"
 COPY . .
 WORKDIR "/src/Presentation/HotelBookAPI.API"
