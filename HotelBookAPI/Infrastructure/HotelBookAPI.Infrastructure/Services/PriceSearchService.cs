@@ -1,6 +1,7 @@
 ﻿using HotelBookAPI.Application.DTOs.PriceSearch;
 using HotelBookAPI.Application.Features.PriceSearch;
 using HotelBookAPI.Application.Interfaces;
+using HotelBookAPI.Infrastructure.Settings;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

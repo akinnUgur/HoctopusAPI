@@ -1,5 +1,6 @@
 ﻿using HotelBookAPI.Application.DTOs.AutoComplete;
 using HotelBookAPI.Application.Interfaces;
+using HotelBookAPI.Infrastructure.Settings;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

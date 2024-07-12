@@ -10,9 +10,6 @@ namespace HotelBookAPI.API.Controllers
         private IMediator _mediator;
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
 
-        protected ObjectResult ReturnResult<T>(Response<T> response)
-        {
-            return response.Succeeded ? Ok(response) : BadRequest(response);
-        }
+     
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Microsoft.Extensions.Caching.Memory;
+using HotelBookAPI.Infrastructure.Settings;
 
 namespace HotelBookAPI.Infrastructure.Services
 {
