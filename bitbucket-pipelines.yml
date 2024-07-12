@@ -1,13 +1,18 @@
-image: atlassian/default-image:3
+image: docker:20.10.7
+
+options:
+  docker: true
 
 pipelines:
   default:
     - step:
         name: Build and Test
+        services:
+          - docker
         caches:
           - dotnetcore
         script:
-          - apt-get update && apt-get install -y docker.io
+          - apk add --no-cache docker-compose
           - docker version
           - dotnet restore
           - dotnet build --configuration Release
@@ -15,11 +20,17 @@ pipelines:
 
     - step:
         name: Build Docker Image
+        services:
+          - docker
         script:
-          - docker build -t your-dockerhub-username/your-image-name .
-          - docker login -u akinnugur -p Ljusa728++
-          - docker push akinnugur/hotelApiImage
+          - docker build -t your-dockerhub-username/your-image-name:your-tag .
+          - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+          - docker push $DOCKER_USERNAME/hotelbook:api
 
 definitions:
+  services:
+    docker:
+      image: docker:20.10.7-dind
+
   caches:
     dotnetcore: ~/.nuget/packages
