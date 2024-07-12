@@ -8,10 +8,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["./HotelBookAPI/Presentation/HotelBookAPI.API.csproj", "./HotelBookAPI/Presentation/HotelBookAPI.API/"]
-COPY ["./HotelBookAPI/Application/HotelBookAPI.Application.csproj", "./HotelBookAPI/Application/HotelBookAPI.Application/"]
+COPY ["./HotelBookAPI/Presentation/HotelBookAPI.API/HotelBookAPI.API.csproj", "./HotelBookAPI/Presentation/HotelBookAPI.API/"]
+COPY ["./HotelBookAPI/Application/HotelBookAPI.Application/HotelBookAPI.Application.csproj", "./HotelBookAPI/Application/HotelBookAPI.Application/"]
 COPY ["./HotelBookAPI/Infrastructure/HotelBookAPI.Infrastructure/HotelBookAPI.Infrastructure.csproj", "./HotelBookAPI/Infrastructure/HotelBookAPI.Infrastructure/"]
-RUN dotnet restore "./Presentation/HotelBookAPI.API/HotelBookAPI.API.csproj"
+RUN dotnet restore "./HotelBookAPI/Presentation/HotelBookAPI.API/HotelBookAPI.API.csproj"
 COPY . .
 WORKDIR "/src/Presentation/HotelBookAPI.API"
 RUN dotnet build "./HotelBookAPI.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
