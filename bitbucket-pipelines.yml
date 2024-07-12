@@ -7,10 +7,7 @@ pipelines:
         caches:
           - dotnetcore
         script:
-          - apt-get update && apt-get install -y docker.io
-          - apt-get install -y docker-compose
-          - service docker start
-          - docker-compose version
+          - apt-get update && apt-get install -y docker.io docker-compose
           - docker info
           - dotnet restore
           - dotnet build --configuration Release
@@ -21,10 +18,7 @@ pipelines:
         caches:
           - dotnetcore
         script:
-          - apt-get update && apt-get install -y docker.io
-          - apt-get install -y docker-compose
-          - service docker start
-          - docker-compose version
+          - apt-get update && apt-get install -y docker.io docker-compose
           - docker info
           - docker build -t $DOCKER_USER_NAME/$IMAGE_NAME:$TAG .
           - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER_NAME --password-stdin
