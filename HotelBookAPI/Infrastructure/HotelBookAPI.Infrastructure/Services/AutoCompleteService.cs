@@ -1,4 +1,5 @@
-﻿using HotelBookAPI.Application.DTOs.AutoComplete;
+﻿using HotelBookAPI.Application.BusinessModels;
+using HotelBookAPI.Application.DTOs.AutoComplete;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Settings;
 using Newtonsoft.Json;
@@ -39,7 +40,7 @@ namespace HotelBookAPI.Infrastructure.Services
 
             var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync($"{_httpClientSettings.BaseAddress}productservice/getarrivalautocomplete", content, cancellationToken);
+            var response = await client.PostAsync($"{_httpClientSettings.BaseAddress}{EnumHelper.GetEnumDescription(TourVisioServices.AutoComplete)}", content, cancellationToken);
 
             if (!response.IsSuccessStatusCode)
             {

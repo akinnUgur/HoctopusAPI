@@ -1,4 +1,5 @@
-﻿using HotelBookAPI.Application.DTOs.PriceSearch;
+﻿using HotelBookAPI.Application.BusinessModels;
+using HotelBookAPI.Application.DTOs.PriceSearch;
 using HotelBookAPI.Application.Features.PriceSearch;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Settings;
@@ -37,7 +38,7 @@ namespace HotelBookAPI.Infrastructure.Services
 
             var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync($"{_httpClientSettings.BaseAddress}productservice/pricesearch", content, cancellationToken);
+            var response = await client.PostAsync($"{_httpClientSettings.BaseAddress}{EnumHelper.GetEnumDescription(TourVisioServices.PriceSearch)}", content, cancellationToken);
 
             if (!response.IsSuccessStatusCode)
             {
