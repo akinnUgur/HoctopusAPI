@@ -1,5 +1,4 @@
 ﻿using HotelBookAPI.Application.Interfaces;
-using HotelBookAPI.Infrastructure.Managers;
 using HotelBookAPI.Infrastructure.Services;
 using HotelBookAPI.Infrastructure.Settings;
 using Microsoft.Extensions.Configuration;
