@@ -44,7 +44,7 @@ namespace HotelBookAPI.Application.Services
                             Id = dtoItem.Country?.Id,
                             Name = dtoItem.Country?.Name
                         },
-                        City = new City
+                        City = new AutoCompleteCity
                         {
                             Id = dtoItem.City?.Id,
                             Name = dtoItem.City?.Name
