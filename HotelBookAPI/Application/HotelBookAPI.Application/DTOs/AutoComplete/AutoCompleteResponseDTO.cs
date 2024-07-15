@@ -1,4 +1,5 @@
 ﻿using HotelBookAPI.Application.DTOs.Common;
+using HotelBookAPI.Application.DTOs.Common.AutoComplete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace HotelBookAPI.Application.DTOs.AutoComplete
         public Geolocation Geolocation { get; set; }
         public Country Country { get; set; }
         public State State { get; set; }
-        public Common.City City { get; set; }
+        public AutoCompleteCity City { get; set; }
         public Hotel Hotel { get; set; }
         public int Provider { get; set; }
     }

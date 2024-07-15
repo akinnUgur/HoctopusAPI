@@ -1,4 +1,5 @@
 ﻿using HotelBookAPI.Application.DTOs.Common;
+using HotelBookAPI.Application.DTOs.Common.AutoComplete;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace HotelBookAPI.Application.Features.PriceSearch
         public string Code { get; set; }
         public Geolocation Geolocation { get; set; }
         public float Stars { get; set; }
-        public City City { get; set; }
+        public AutoCompleteCity City { get; set; }
         public List<Offer> Offers { get; set; }
         public string Address { get; set; }
 
