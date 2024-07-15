@@ -1,4 +1,5 @@
-﻿using HotelBookAPI.Application.DTOs.PriceSearch;
+﻿using HotelBookAPI.Application.BusinessModels;
+using HotelBookAPI.Application.DTOs.PriceSearch;
 using HotelBookAPI.Application.Features.PriceSearch;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Settings;
@@ -12,59 +13,23 @@ using System.Threading.Tasks;
 
 namespace HotelBookAPI.Infrastructure.Services
 {
-    public class PriceSearchService : IPriceSearchService
+    public class PriceSearchService : BaseHTTPService, IPriceSearchService
     {
-        private readonly HttpClientSettings _httpClientSettings;
-        private readonly IHttpClientFactory _httpClientFactory;
-        private readonly TokenCacheService _tokenCacheService;
-
-        public PriceSearchService(TokenCacheService tokenCacheService, IHttpClientFactory httpClientFactory, HttpClientSettings httpClientSettings)
+        public PriceSearchService(HttpClientSettings httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory, tokenCacheService)
         {
-            _tokenCacheService = tokenCacheService;
-            _httpClientFactory = httpClientFactory;
-            _httpClientSettings = httpClientSettings;
-        }
-
-        public async Task<string> GenericPriceSearchAsync(GenericPriceSearchRequestDTO request, CancellationToken cancellationToken)
-        {
-            var client = _httpClientFactory.CreateClient(_httpClientSettings.Name);
-
-            var bearerToken = await _tokenCacheService.GetOrCreateAccessTokenAsync(cancellationToken);
-
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
-
-            var jsonRequest = JsonConvert.SerializeObject(request);
-
-            var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync($"{_httpClientSettings.BaseAddress}productservice/pricesearch", content, cancellationToken);
-
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new Exception("Request failed with status code: " + response.StatusCode);
-            }
-
-            var jsonResponse = await response.Content.ReadAsStringAsync(cancellationToken);
-
-            return jsonResponse;
-
-
         }
 
         public async Task<PriceSearchResponse> HotelBasedSearchAsync(HotelBasedSearchRequestDTO request, CancellationToken cancellationToken)
         {
 
-            var response = await GenericPriceSearchAsync(request, cancellationToken);
-
+            var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.PriceSearch), cancellationToken);
             return JsonConvert.DeserializeObject<PriceSearchResponse>(response);
         }
 
         public async Task<PriceSearchResponse> LocationBasedSearchAsync(LocationBasedSearchRequestDTO request, CancellationToken cancellationToken)
         {
-            var response = await GenericPriceSearchAsync(request, cancellationToken);
-
+            var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.PriceSearch), cancellationToken);
             return JsonConvert.DeserializeObject<PriceSearchResponse>(response);
-
         }
 
 
