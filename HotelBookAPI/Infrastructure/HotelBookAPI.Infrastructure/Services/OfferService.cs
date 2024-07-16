@@ -1,5 +1,6 @@
 ﻿using HotelBookAPI.Application.BusinessModels;
 using HotelBookAPI.Application.DTOs.AutoComplete;
+using HotelBookAPI.Application.Features.GetOfferDetails;
 using HotelBookAPI.Application.Features.GetOffers;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Settings;
@@ -24,5 +25,13 @@ namespace HotelBookAPI.Infrastructure.Services
             var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.GetOffers), cancellationToken);
             return JsonConvert.DeserializeObject<GetOffersResponse>(response);
         }
+
+        public async Task<GetOfferDetailsResponse> GetOfferDetailsAsync(GetOfferDetailsRequest request, CancellationToken cancellationToken)
+        {
+            var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.GetOfferDetails), cancellationToken);
+            return JsonConvert.DeserializeObject<GetOfferDetailsResponse>(response);
+        }
+
+   
     }
 }

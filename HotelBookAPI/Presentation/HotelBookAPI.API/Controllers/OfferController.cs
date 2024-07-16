@@ -1,4 +1,5 @@
-﻿using HotelBookAPI.Application.Features.GetOffers;
+﻿using HotelBookAPI.Application.Features.GetOfferDetails;
+using HotelBookAPI.Application.Features.GetOffers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +12,13 @@ namespace HotelBookAPI.API.Controllers
 
         [HttpPost("GetOffers")]
         public async Task<IActionResult> GetOffersAsync(GetOffersRequest request)
+        {
+            var data = await Mediator.Send(request);
+            return Ok(data);
+        }
+
+        [HttpPost("GetOfferDetails")]
+        public async Task<IActionResult> GetOfferDetailsAsync(GetOfferDetailsRequest request)
         {
             var data = await Mediator.Send(request);
             return Ok(data);
