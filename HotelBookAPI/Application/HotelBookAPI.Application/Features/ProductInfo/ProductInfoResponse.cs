@@ -14,7 +14,7 @@ namespace HotelBookAPI.Application.Features.ProductInfo
 
         public ProductInfoBody? Body{ get; set; }
     }
-
+    //deneme commit 
     public class ProductInfoHeader
     {
         public string RequestId { get; set; }
