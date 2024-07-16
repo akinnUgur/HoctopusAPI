@@ -1,5 +1,4 @@
 ﻿using HotelBookAPI.Application.Interfaces;
-using HotelBookAPI.Infrastructure.Managers;
 using HotelBookAPI.Infrastructure.Services;
 using HotelBookAPI.Infrastructure.Settings;
 using Microsoft.Extensions.Configuration;
@@ -38,7 +37,8 @@ namespace HotelBookAPI.Infrastructure
 
             services.AddTransient<IAutoCompleteService, AutoCompleteService>();
             services.AddTransient<IPriceSearchService, PriceSearchService>();
-            services.AddSingleton<ITourVisioManager, TourVisioManager>();
+            services.AddTransient<IProductInfoService, ProductInfoService>();
+
 
         }
     }

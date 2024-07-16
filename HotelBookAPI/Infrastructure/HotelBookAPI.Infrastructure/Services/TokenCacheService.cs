@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Microsoft.Extensions.Caching.Memory;
 using HotelBookAPI.Infrastructure.Settings;
+using HotelBookAPI.Application.BusinessModels;
 
 namespace HotelBookAPI.Infrastructure.Services
 {
@@ -39,7 +40,7 @@ namespace HotelBookAPI.Infrastructure.Services
         private async Task<string> RetrieveAccessTokenFromApi(CancellationToken cancellationToken)
         {
             var client = _httpClientFactory.CreateClient(_httpClientSettings.Name);
-            client.BaseAddress = new Uri($"{_httpClientSettings.BaseAddress}authenticationservice/login");
+            client.BaseAddress = new Uri($"{_httpClientSettings.BaseAddress}");
 
             var requestBody = new
             {
@@ -53,7 +54,7 @@ namespace HotelBookAPI.Infrastructure.Services
            "application/json"
        );
 
-            var response = await client.PostAsync($"{_httpClientSettings.BaseAddress}authenticationservice/login", jsonContent, cancellationToken);
+            var response = await client.PostAsync($"{_httpClientSettings.BaseAddress}{EnumHelper.GetEnumDescription(TourVisioServices.Authanticate)}", jsonContent, cancellationToken);
 
 
 

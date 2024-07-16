@@ -9,7 +9,7 @@ namespace HotelBookAPI.Application.DTOs.Common.AutoComplete
     public class AutoCompleteItem
     {
         public AutoCompleteCountry Country { get; set; }
-        public City City { get; set; }
+        public AutoCompleteCity City { get; set; }
         public AutoCompleteHotel Hotel { get; set; }
     }
 }
