@@ -1,7 +1,16 @@
 ﻿using HotelBookAPI.Infrastructure.Settings;
 using Newtonsoft.Json;
+<<<<<<< HEAD
 using System.Net.Http.Headers;
 using System.Text;
+=======
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> d33378414051659540413d40f05c221cc06b088e
 
 namespace HotelBookAPI.Infrastructure.Services
 {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelBookAPI.Application.DTOs.Common
+namespace HotelBookAPI.Application.DTOs.Common.AutoComplete
 {
-    public class City
+    public class AutoCompleteCity
     {
         public string Id { get; set; }
         public string Name { get; set; }
