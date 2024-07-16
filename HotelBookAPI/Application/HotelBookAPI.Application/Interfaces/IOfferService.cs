@@ -1,4 +1,5 @@
-﻿using HotelBookAPI.Application.Features.GetOffers;
+﻿using HotelBookAPI.Application.Features.GetOfferDetails;
+using HotelBookAPI.Application.Features.GetOffers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace HotelBookAPI.Application.Interfaces
     public interface IOfferService
     {
         Task<GetOffersResponse> GetOffersAsync(GetOffersRequest request, CancellationToken cancellationToken);
+        Task<GetOfferDetailsResponse> GetOfferDetailsAsync(GetOfferDetailsRequest request, CancellationToken cancellationToken);
     }
 }
