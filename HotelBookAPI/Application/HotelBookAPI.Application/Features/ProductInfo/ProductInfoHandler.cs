@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HotelBookAPI.Application.Features.Common;
+using HotelBookAPI.Application.Interfaces;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,15 @@ namespace HotelBookAPI.Application.Features.ProductInfo
 {
     public class ProductInfoHandler : CommonHandler, IRequestHandler<ProductInfoRequest, ProductInfoResponse>
     {
-        public ProductInfoHandler(IMapper mapper) : base(mapper)
+        private readonly IProductInfoService _productInfoService;
+        public ProductInfoHandler(IMapper mapper, IProductInfoService productInfoService) : base(mapper)
         {
+            _productInfoService = productInfoService;
         }
 
         public Task<ProductInfoResponse> Handle(ProductInfoRequest request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+           return _productInfoService.GetProductInfoAsync(request, cancellationToken);
         }
     }
 }
