@@ -1,5 +1,6 @@
 ﻿using AutoMapper.Internal.Mappers;
 using HotelBookAPI.Application.DTOs.AutoComplete;
+using HotelBookAPI.Application.DTOs.Common;
 using HotelBookAPI.Application.Features.PriceSearch;
 using Newtonsoft.Json;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace HotelBookAPI.Application.Features.Booking.WithOffer
 {
-    public class BeginTransactionResponse//sa
+    public class BeginTransactionResponse
     {
         public Header Header { get; set; }
 
@@ -62,7 +63,9 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public List<Service> Services { get; set; }
 
-        public List<Invoice> Invoices { get; set; }
+        public PaymentDetail PaymentDetail { get; set; }
+
+        public List<Object> Invoices { get; set; }
     }
 
     public class Traveller
@@ -88,7 +91,6 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public Address Adress { get; set; }
 
-        //????
         public DestinationAddress DestinationAddress { get; set; }
 
         public List<Service> Services { get; set; }
@@ -99,9 +101,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public DateTime BirthDateTo { get; set; }
 
-
-        //?????? string?
-        public List<object> RequiredFields { get; set; }
+        public List<string> RequiredFields { get; set; }
 
 
         public List<object> Documents { get; set; }
@@ -114,9 +114,16 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public int Status { get; set; }
 
+        public AcademicTitle AcademicTitle { get; set; }
+
 
     }
 
+    public class AcademicTitle
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+    }
     public class ReservationInfo
     {
         public string BookingNumber { get; set; }
@@ -125,11 +132,6 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public AgencyUser AgencyUser { get; set; }
 
-        //SİL???
-        public ReservationInfoAgencyCountry ReservationInfoCountry { get; set; }
-
-        //sil????
-        public ReservationInfoAddress ReservationInfoAddress { get; set; }
 
         public DateTime BeginDate { get; set; }
 
@@ -156,7 +158,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public Price PassengerBalance { get; set; }
 
-        public Price AgencyCommission { get; set; }
+        public Commission AgencyCommission { get; set; }
 
         public Commission BrokerCommission { get; set; }
 
@@ -202,7 +204,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public DateTime CreateDate { get; set; }
 
-        public ReservationAdditionalField ReservationAdditionalField { get; set; }
+        public AdditionalField AdditionalField { get; set; }
 
         public string AdditionalCode1 { get; set; }
 
@@ -341,18 +343,22 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public bool OwnAgency { get; set; }
 
+        public Country Country { get; set; }    
+
+        public Address Address { get; set; }
+
         public bool AceExport { get; set; }
     }
 
     public class AgencyUser
     {
-        public Office Office;
+        public Office Office { get; set; }
 
-        public Operator Operator;
+        public Operator Operator { get; set; }
 
-        public Market Market;
+        public Market Market { get; set; }
 
-        public UserAgency UserAgency;
+        public UserAgency UserAgency { get; set; }
 
         public string Name { get; set; }
 
@@ -392,63 +398,13 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public string Code { get; set; }
     }
-    public class ReservationInfoAgencyCountry
+
+    public class Commission
     {
-        public string InternationalCode { get; set; }
-
-        public int Provider { get; set; }
-
-        public bool IsTopRegion { get; set; }
+        public int Percent { get; set; }
+        public decimal Amount { get; set; }
+        public string Currency {  get; set; }
     }
-
-    public class ReservationInfoAddress
-    {
-        public ReservationInfoAddressCountry Country { get; set; }
-
-        public ReservationInfoAddressCity ReservationInfoAddressCity { get; set; }
-
-        //??????
-        public List<string> AddressLines { get; set; }
-
-        public string ZipCode { get; set; }
-
-        public string Email { get; set; }
-
-        public string Phone { get; set; }
-
-        public string AddressText { get; set; }
-    }
-
-    public class ReservationInfoAddressCity
-    {
-
-        public string City { get; set; }
-
-        public string Latitude { get; set; }
-
-        public string Longitude { get; set; }
-
-        public int Provider { get; set; }
-
-        public bool IsTopRegion { get; set; }
-
-        public string Id { get; set; }
-    }
-
-    public class ReservationInfoAddressCountry
-    {
-        public string InternationalCode { set; get; }
-
-        public string Name { get; set; }
-
-        public int Provider { set; get; }
-
-        public bool IsTopRegion { set; get; }
-
-        public string Id { get; set; }
-    }
-
-
     public class AdditionalField
     {
         public string TravellerTypeOrder { get; set; }
@@ -462,10 +418,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
         public DateTime BirthDateFrom { get; set; }
 
         public DateTime BirthDateTo { get; set; }
-    }
 
-    public class AdditionalField2
-    {
         public string IsRefundable { set; get; }
         public string ReservableInfo { set; get; }
 
@@ -592,6 +545,14 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
     {
         public string Id { get; set; }
         public string Name { get; set; }
+
+        public string Latitude { get; set; }
+
+        public string Longitude { get; set; }
+
+        public int Provider {  get; set; }
+
+        public bool IsTopRegion { get; set; }
     }
     public class ContactPhone
     {
@@ -617,17 +578,84 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
         public string Name { get; set; }
         public string Id { get; set; }
     }
-
-
-
-    public class Commission { }
-
-
-    //????
     public class ReservableInfo
     {
         public bool Reservable { get; set; }
     }
+
+    public class PaymentDetail
+    {
+        public List<PaymentPlan> PaymentPlan { get; set; }
+        public List<object> PaymentInfo { get; set; }
+    }
+
+    public class PaymentPlan
+    {
+        public int PaymentNo { get; set; }
+        public DateTime DueDate { get; set; }
+        public Price Price { get; set; }
+        public bool PaymentStatus { get; set; }
+    }
+
+    public class ServiceDetails
+    {
+        public string ServiceId { get; set; }
+        public string Thumbnail { get; set; }
+        public HotelDetail HotelDetail { get; set; }
+        public int Night { get; set; }
+        public string Room { get; set; }
+        public string Board { get; set; }
+        public string Accom { get; set; }
+        public GeoLocation GeoLocation { get; set; }
+    }
+
+    public class GeoLocation
+    {
+        public string Longitude { get; set; }
+        public string Latitude { get; set; }
+    }
+
+    public class CancellationPolicy
+    {
+        public DateTime BeginDate { get; set; }
+
+        public DateTime DueDate { get; set; }
+
+        public Price Price { get; set; }
+
+        public int Provider {  get; set; }
+    }
+
+    public class HotelDetail
+    {
+        public Address Address { get; set; }
+        public Location TransferLocation { get; set; }
+        public int StopSaleGuaranteed { get; set; }
+        public int StopSaleStandart { get; set; }
+        public GeoLocation Geolocation { get; set; }
+        public Location Location { get; set; }
+        public Country Country { get; set; }
+        public City City { get; set; }
+        public string Thumbnail { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class Location
+    {
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public int Type { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+        public string ParentId { get; set; }
+        public string CountryId { get; set; }
+        public int Provider { get; set; }
+        public bool IsTopRegion { get; set; }
+        public string Id { get; set; }
+    }
+
+
 }
 
 
