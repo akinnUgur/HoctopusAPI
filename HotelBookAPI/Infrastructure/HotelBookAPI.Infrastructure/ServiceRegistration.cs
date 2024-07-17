@@ -39,6 +39,7 @@ namespace HotelBookAPI.Infrastructure
             services.AddTransient<IPriceSearchService, PriceSearchService>();
             services.AddTransient<IProductInfoService, ProductInfoService>();
             services.AddTransient<IOfferService, OfferService>();
+            services.AddTransient<IReservationService, ReservationService>();
 
 
         }
