@@ -1,5 +1,6 @@
 ﻿using HotelBookAPI.Application.DTOs.Common;
 using HotelBookAPI.Application.Features.ProductInfo;
+using HotelBookAPI.Application.Features.RemoveServices;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -141,19 +142,13 @@ namespace HotelBookAPI.Application.Features.AddServices
 
         public string ZipCode { get; set; }
 
-        public TravellerCity City { get; set; }
+        public TravellerCityandCountry City { get; set; }
 
-        public TravellerCountry Country { get; set; }
+        public TravellerCityandCountry Country { get; set; }
 
     }
     public class TravellerContactPhone { }
-    public class TravellerCity
-    {
-        public string Id { get; set; }
-        public string Name { get; set; }
-
-    }
-    public class TravellerCountry
+    public class TravellerCityandCountry
     {
         public string Id { get; set; }
         public string Name { get; set; }
