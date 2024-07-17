@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace HotelBookAPI.Application.Features.PriceSearch
 {
+
+    /// <summary>
+    /// ReuestID ve oFfer Id ve product Id getoffers endpoitinde kullanılacak
+    /// </summary>
     public class PriceSearchResponse
     {
         public Body? Body { get; set; }
@@ -19,19 +23,7 @@ namespace HotelBookAPI.Application.Features.PriceSearch
 
 
     }
-    public class Header
-    {
-        public bool Success { get; set; }
-        public List<Message> Messages { get; set; }
-    }
-    public class Message
-    {
-        public int Id { get; set; }
-        public string Code { get; set; }
 
-        [JsonProperty("message")]
-        public string msg { get; set; }
-    }
     public class Body
     {
         public string SearchId { get; set; }
@@ -69,7 +61,7 @@ namespace HotelBookAPI.Application.Features.PriceSearch
         public string OfferId { get; set; }
         public string CheckIn { get; set; }
 
-        public DTOs.Common.Price Price { get; set; }
+        public Price Price { get; set; }
     }
     public class Room
     {
