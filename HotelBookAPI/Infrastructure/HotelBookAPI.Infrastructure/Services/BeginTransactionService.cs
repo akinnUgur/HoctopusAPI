@@ -1,4 +1,5 @@
 ﻿using HotelBookAPI.Application.Interfaces;
+using HotelBookAPI.Infrastructure.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
