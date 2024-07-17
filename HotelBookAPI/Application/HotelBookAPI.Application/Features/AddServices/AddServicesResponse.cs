@@ -15,19 +15,19 @@ namespace HotelBookAPI.Application.Features.AddServices
         public AddServicesBody? Body { get; set; }
     }
 
-    public class AddServicesHeader 
+    public class AddServicesHeader
     {
         public string RequestId { get; set; }
         public bool Success { get; set; }
         public List<AddServicesInfoMessages> Messages { get; set; }
     }
 
-    public class AddServicesInfoMessages 
+    public class AddServicesInfoMessages
     {
         public int Id { get; set; }
         public string Message { get; set; }
     }
-    public class AddServicesBody 
+    public class AddServicesBody
     {
         public string TransactionId { get; set; }
 
@@ -35,8 +35,12 @@ namespace HotelBookAPI.Application.Features.AddServices
 
         public AddServicesReservationData ReservationData { get; set; }
 
+        public int Status { get; set; }
+
+        public int TransactionType { get; set; }
+
     }
-    public class AddServicesReservationData 
+    public class AddServicesReservationData
     {
         public List<AddServicesTravellers> Travellers { get; set; }
 
@@ -46,31 +50,39 @@ namespace HotelBookAPI.Application.Features.AddServices
 
         public AddServicesPaymentDetail PaymentDetail { get; set; }
 
+        public List<AddServicesInvoices> Invoices { get; set; }
+
 
     }
-    public class AddServicesTravellers 
+    public class AddServicesTravellers
     {
-        public int TravellerId { get; set; }
+        public string TravellerId { get; set; }
 
-        public List<availableTitles> availableTitle {  get; set; }
+        public int Type { get; set; }
 
-        public AcademicTitle academicTitle { get; set; }
+        public int Title { get; set; }
 
-        public List<availableAcademicTitles> availableAcademicTitle { get; set; }
+        public List<availableTitle> AvailableTitles { get; set; }
 
-        public bool TravllersisLeader {  get; set; }
+        public AcademicTitle AcademicTitle { get; set; }
 
-        public string birthDate { get; set; }
+        public List<availableAcademicTitle> AvailableAcademicTitles { get; set; }
 
-        public Nationality nationality { get; set; }
+        public bool IsLeader { get; set; }
 
-        public string identityNumber { get; set; }
+        public string BirthDate { get; set; }
 
-        public TravellerPassportInfo travellerPassportInfo { get; set; }
+        public Nationality Nationality { get; set; }
 
-        public TravellerAddressInfo travellerAddressInfo { get; set; }
+        public string IdentityNumber { get; set; }
 
-        public List<TravellersServices> TravellersService {  get; set; }
+        public TravellerPassportInfo PassportInfo { get; set; }
+
+        public TravellerAddressInfo Address { get; set; }
+
+        public TravellerDestinationAddress DestinationAddress { get; set; }
+
+        public List<TravellersServices> Services { get; set; }
 
         public int orderNumber { get; set; }
 
@@ -83,71 +95,72 @@ namespace HotelBookAPI.Application.Features.AddServices
         public List<AdditionalFields> additionalField { get; set; }
 
     }
-    public class availableTitles 
+    public class availableTitle
     {
-        public string id { get; set; }
-        public string name { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     }
-    public class AcademicTitle 
+    public class AcademicTitle
     {
-        public string id { get; set; }
+        public string Id { get; set; }
     }
-    public class availableAcademicTitles 
+    public class availableAcademicTitle
     {
-        public string id { get; set; }
-        public string name { get; set; }
-    }
-
-    public class Nationality 
-    {
-        public string twoLetterCode { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     }
 
-    public class TravellerPassportInfo 
+    public class Nationality
     {
-        public string expireDate { get; set; }
-        public string issueDate { get; set; }
-        public string citizenshipCountryCode { get; set; }
+        public string TwoLetterCode { get; set; }
     }
 
-    public class TravellerAddressInfo 
+    public class TravellerPassportInfo
     {
-        public TravellerContactPhone travellercontactPhone { get; set; }
-        public string email { get; set; }
-        public string address { get; set; }
-            
-        public string zipCode { get; set; }
+        public string ExpireDate { get; set; }
+        public string IssueDate { get; set; }
+        public string CitizenshipCountryCode { get; set; }
+    }
 
-        public TravellerCity travellerCity { get; set; }
+    public class TravellerAddressInfo
+    {
+        public TravellerContactPhone ContactPhone { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
 
-        public TravellerCountry travellerCountry { get; set; }
+        public string ZipCode { get; set; }
+
+        public TravellerCity City { get; set; }
+
+        public TravellerCountry Country { get; set; }
 
     }
-    public class TravellerContactPhone {}
-    public class TravellerCity 
+    public class TravellerContactPhone { }
+    public class TravellerCity
     {
-        public string id { get; set; }
-        public string name { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
 
     }
     public class TravellerCountry
     {
-        public string id { get; set; }
-        public string name { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
 
     }
-    public class TravellersServices 
+    public class TravellerDestinationAddress { }
+    public class TravellersServices
     {
-        public string id { get; set; }
+        public string Id { get; set; }
 
-        public int type { get; set; }
+        public int Type { get; set; }
 
-        public tPrice tprice{ get; set; }
+        public tPrice Price { get; set; }
 
         public int passengerType { get; set; }
 
     }
-    public class tPrice 
+    public class tPrice
     {
         public int amount { get; set; }
 
@@ -155,51 +168,63 @@ namespace HotelBookAPI.Application.Features.AddServices
 
     }
 
-    public class AdditionalFields 
+    public class AdditionalFields
     {
         public string travellerTypeOrder { get; set; }
         public string travellerUniqueID { get; set; }
-        public string tourVisio_TravellerId { get; set; }        
+        public string tourVisio_TravellerId { get; set; }
         public string paximum_TravellerId { get; set; }
         public string birthDateFrom { get; set; }
         public string birthDateTo { get; set; }
 
     }
 
-    public class AddServicesReservationInfo 
+    public class AddServicesReservationInfo
     {
 
     }
-    public class AddServicesServices 
+    public class AddServicesServices
     {
 
     }
-    public class AddServicesPaymentDetail 
+    public class AddServicesPaymentDetail
     {
         public List<AddServicesPaymentPlan> PaymentPlan { get; set; }
 
+        public List<AddServicesPaymentInfo> PaymentInfo { get; set; }
+
     }
-    public class AddServicesPaymentPlan 
+    public class AddServicesPaymentPlan
     {
-        public int paymentNo { get; set; }
+        public int PaymentNo { get; set; }
 
-        public string dueDate { get; set; }
+        public string DueDate { get; set; }
 
-        public AddServicesPaymentPlanPrice addServicesPaymentPlanPrice {  get; set; } 
+        public AddServicesPaymentPlanPrice PaymentPlan { get; set; }
 
-        public bool paymentStatus { get; set; }
-        
+        public bool PaymentStatus { get; set; }
+
     }
 
     public class AddServicesPaymentPlanPrice
     {
-        public int percent { get; set; }
-        
-        public int amount { get; set; }
+        public int Percent { get; set; }
 
-        public string currency { get; set; }
+        public int Amount { get; set; }
 
-        
-        
+        public string Currency { get; set; }
+
+
+
     }
+    
+    
+    
+    
+    
+    
+    
+    public class AddServicesPaymentInfo {}
+
+    public class AddServicesInvoices{}
 }

@@ -1,4 +1,5 @@
-﻿using HotelBookAPI.Application.Features.ProductInfo;
+﻿using HotelBookAPI.Application.Features.PriceSearch;
+using HotelBookAPI.Application.Features.ProductInfo;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,16 @@ namespace HotelBookAPI.Application.Features.AddServices
     {
         public string TransactionId { get; set; }
 
-        public List<string> Offers { get; set; }
+        public List<Offer> Offers { get; set; }
 
         public string Currency { get; set; }
 
         public string Culture { get; set; }
+    }
+    public class Offer
+    {
+        public string OfferId { get; set; }
+
+        public List<string> Travellers { get; set; }
     }
 }

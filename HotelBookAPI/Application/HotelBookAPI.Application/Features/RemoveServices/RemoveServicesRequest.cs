@@ -12,7 +12,7 @@ namespace HotelBookAPI.Application.Features.RemoveServices
     {
         public string TransactionId { get; set; }
 
-        public List<string> Offers { get; set; }
+        public List<string> Services { get; set; }
 
         public string Currency { get; set; }
 
