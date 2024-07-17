@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace HotelBookAPI.Application.Features.Booking.WithOffer
 {
-    public class BeginTransactionResponse
+    public class BeginTransactionResponse//sa
     {
         public Header Header { get; set; }
 
