@@ -297,10 +297,9 @@ namespace HotelBookAPI.Application.Features.AddServices
     }
     public class AddServiceAgencyAddressCity
     {
-
-        public string InternationalCode { get; set; }
-
         public string Name { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
 
         public int Provider { get; set; }
 
