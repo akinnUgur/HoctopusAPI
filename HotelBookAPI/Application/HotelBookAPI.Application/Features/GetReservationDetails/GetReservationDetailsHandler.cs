@@ -13,15 +13,16 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
 {
     public class GetReservationDetailsHandler : CommonHandler, IRequestHandler<GetReservationDetailsRequest, GetReservationDetailsResponse>
     {
-        public readonly IGetReservationDetailsService _getReservationDetailsService;
+     
 
-        public GetReservationDetailsHandler(IMapper mapper, IGetReservationDetailsService getReservationDetailsService) : base(mapper)
+        public GetReservationDetailsHandler(IMapper mapper) : base(mapper)
         {
-            _getReservationDetailsService = getReservationDetailsService;
+          
         }
+
         public Task<GetReservationDetailsResponse> Handle(GetReservationDetailsRequest request, CancellationToken cancellationToken)
         {
-            return _getReservationDetailsService.GetReservationDetailsAsync(request, cancellationToken);
+            throw new NotImplementedException();
         }
     }
 }
