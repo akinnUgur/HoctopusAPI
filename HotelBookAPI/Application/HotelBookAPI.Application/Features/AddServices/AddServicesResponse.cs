@@ -100,7 +100,7 @@ namespace HotelBookAPI.Application.Features.AddServices
 
         public int PassengerType { get; set; }
 
-        public List<AdditionalField> AdditionalFields { get; set; }
+        public AdditionalField AdditionalFields { get; set; }
 
         public List<InsertField> InsertFields { get; set; }
 
@@ -181,7 +181,7 @@ namespace HotelBookAPI.Application.Features.AddServices
         public string TravellerTypeOrder { get; set; }
         public string TravellerUniqueID { get; set; }
         public string TourVisio_TravellerId { get; set; }
-        public string Paximum_TravellerId { get; set; }
+        //public string Paximum_TravellerId { get; set; }
         public string BirthDateFrom { get; set; }
         public string BirthDateTo { get; set; }
 
@@ -409,7 +409,7 @@ namespace HotelBookAPI.Application.Features.AddServices
         public List<Document> Documents { get; set; }
         public string EncryptedServiceNumber { get; set; }
         public List<PriceBreakDown> PriceBreakDowns { get; set; }
-        public int Commission { get; set; }
+        public double Commission { get; set; }
         public ReservableInfos ReservableInfo { get; set; }
         public int Unit { get; set; }
         public List<ConditionalSpo> ConditionalSpos { get; set; }
@@ -483,8 +483,8 @@ namespace HotelBookAPI.Application.Features.AddServices
     public class ConditionalSpo { }
     public class ServiceAdditionalFields
     {
-        public string IsRefundable { get; set; }
-        public string ReservableInfo { get; set; }
+        public string removable { get; set; }
+        public string additionalServiceUniqueId { get; set; }
         public string IsEditable { get; set; }
     }
 
@@ -509,9 +509,9 @@ namespace HotelBookAPI.Application.Features.AddServices
 
     public class AddServicesPaymentPlanPrice
     {
-        public int Percent { get; set; }
+        public double Percent { get; set; }
 
-        public int Amount { get; set; }
+        public double Amount { get; set; }
 
         public string Currency { get; set; }
 
