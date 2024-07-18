@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using HotelBookAPI.API.Controllers;
 
 namespace HotelBookAPI.Infrastructure
 {
@@ -40,6 +41,8 @@ namespace HotelBookAPI.Infrastructure
             services.AddTransient<IProductInfoService, ProductInfoService>();
             services.AddTransient<IBeginTransactionService, BeginTransactionService>();
             services.AddTransient<IOfferService, OfferService>();
+            services.AddTransient<IAddServicesService, AddServicesService>();
+            services.AddTransient<IRemoveServicesService, RemoveServicesService>();
 
 
 
