@@ -27,15 +27,14 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
     }
     public class GetReservationDetailBody
     {
+        public string ReservationNumber { get; set; }
+        public string EncryptedReservationNumber { get; set; }
         public string TransactionId { get; set; }
-
-        public string ExpiresOn { get; set; }
 
         public GetReservationDetailReservationData ReservationData { get; set; }
 
         public int Status { get; set; }
 
-        //public int TransactionType { get; set; }
 
     }
     public class GetReservationDetailReservationData
@@ -66,9 +65,14 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
 
         public List<availableAcademicTitle> AvailableAcademicTitles { get; set; }
 
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        
         public bool IsLeader { get; set; }
 
         public string BirthDate { get; set; }
+
+        public int Age { get; set; }
 
         public Nationality Nationality { get; set; }
 
@@ -81,12 +85,13 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public TravellerDestinationAddress DestinationAddress { get; set; }
 
         public List<TravellersServices> Services { get; set; }
+        public int Gender { get; set; }
 
         public int OrderNumber { get; set; }
 
-        public string BirthDateFrom { get; set; }
+        //public string BirthDateFrom { get; set; }
 
-        public string BirthDateTo { get; set; }
+        //public string BirthDateTo { get; set; }
 
         public List<string> RequiredFields { get; set; }
 
@@ -94,7 +99,7 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
 
         public int PassengerType { get; set; }
 
-        public List<AdditionalField> AdditionalFields { get; set; }
+        public AdditionalField AdditionalFields { get; set; }
 
         public List<InsertField> InsertFields { get; set; }
 
@@ -118,11 +123,18 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
 
     public class Nationality
     {
+        public string Name { get; set; }
         public string TwoLetterCode { get; set; }
+        public string ThreeLetterCode { get; set; }
+        public string NumericCode { get; set; }
+        public string IsdCode { get; set; }
+
     }
 
     public class TravellerPassportInfo
     {
+        public string Serial { get; set; }
+        public string NUmber { get; set; }
         public string ExpireDate { get; set; }
         public string IssueDate { get; set; }
         public string CitizenshipCountryCode { get; set; }
@@ -141,7 +153,11 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public TravellerCityandCountry Country { get; set; }
 
     }
-    public class TravellerContactPhone { }
+    public class TravellerContactPhone 
+    {
+        public string CountryCode { get; set; }
+        public string PhoneNumber { get; set; }
+    }
     public class TravellerCityandCountry
     {
         public string Id { get; set; }
@@ -154,6 +170,7 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public string Id { get; set; }
 
         public int Type { get; set; }
+        public string TicketNo { get; set; }
 
         public tPrice Price { get; set; }
 
@@ -175,7 +192,7 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public string TravellerTypeOrder { get; set; }
         public string TravellerUniqueID { get; set; }
         public string TourVisio_TravellerId { get; set; }
-        public string Paximum_TravellerId { get; set; }
+        //public string Paximum_TravellerId { get; set; }
         public string BirthDateFrom { get; set; }
         public string BirthDateTo { get; set; }
 
@@ -185,6 +202,9 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
     public class GetReservationDetailReservationInfo
     {
         public string BookingNumber { get; set; }
+        public string EncryptedReservationNumber { get; set; }
+        public MarketandOperator Market {  get; set; }
+        public MarketandOperator Operator {  get; set; }
 
         public GetReservationDetailAgency Agency { get; set; }
 
@@ -193,7 +213,7 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public string BeginDate { get; set; }
         public string EndDate { get; set; }
         public string Note { get; set; }
-
+        public string agencyReservationNumber { get; set; }
         public PriceInfo SalePrice { get; set; }
         public PriceInfo SupplementDiscount { get; set; }
         public PriceInfo PassengerEB { get; set; }
@@ -215,7 +235,7 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public int ConfirmationStatus { get; set; }
         public int PaymentStatus { get; set; }
 
-        public List<Document> Documents { get; set; }
+        public List<Documented> Documents { get; set; }
         public List<Document> OtherDocuments { get; set; }
 
         public ReservableInfos ReservableInfo { get; set; }
@@ -226,7 +246,9 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public CityInfo DepartureCity { get; set; }
         public CityInfo ArrivalCity { get; set; }
         public string CreateDate { get; set; }
-        public AdditionalField AdditionalFields { get; set; }
+        public string ChangeDate { get; set; }
+
+        public AdditionalFields AdditionalFields { get; set; }
         public string AdditionalCode1 { get; set; }
         public string AdditionalCode2 { get; set; }
         public string AdditionalCode3 { get; set; }
@@ -235,15 +257,19 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public bool HasAvailablePromotionCode { get; set; }
 
     }
+    public class MarketandOperator
+    {
+        public string Code { get; set; }
+    }
 
     public class GetReservationDetailAgency
     {
         public string Code { get; set; }
         public string Name { get; set; }
 
-        public RemoveServiceAgencyCountry Country { get; set; }
+        public GetReservationDetailAgencyCountry Country { get; set; }
 
-        public RemoveServiceAgencyAddress Address { get; set; }
+        public GetReservationDetailAgencyAddress Address { get; set; }
 
         public bool OwnAgency { get; set; }
 
@@ -251,12 +277,12 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
 
     }
 
-    public class RemoveServiceAgencyAddress
+    public class GetReservationDetailAgencyAddress
     {
 
-        public RemoveServiceAgencyAddressCountry Country { get; set; }
+        public GetReservationDetailAgencyAddressCountry Country { get; set; }
 
-        public RemoveServiceAgencyAddressCity City { get; set; }
+        public GetReservationDetailAgencyAddressCity City { get; set; }
 
         public List<string> AddressLines { get; set; }
 
@@ -267,7 +293,7 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
 
     }
 
-    public class RemoveServiceAgencyCountry
+    public class GetReservationDetailAgencyCountry
     {
         public string InternationalCode { get; set; }
 
@@ -276,7 +302,7 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public bool IsTopRegion { get; set; }
 
     }
-    public class RemoveServiceAgencyAddressCountry
+    public class GetReservationDetailAgencyAddressCountry
     {
         public string InternationalCode { get; set; }
 
@@ -289,12 +315,14 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public string Id { get; set; }
 
     }
-    public class RemoveServiceAgencyAddressCity
+    public class GetReservationDetailAgencyAddressCity
     {
 
         public string InternationalCode { get; set; }
 
-        public string Name { get; set; }
+        public string Latitude { get; set; }
+
+        public string Longitude { get; set; }
 
         public int Provider { get; set; }
 
@@ -386,27 +414,38 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public string AllowSalePriceEdit { get; set; }
         public string SendFlightSms { get; set; }
     }
+    public class Documented 
+    {
+        public int DocumentType { get; set; }
+        public string Url { get; set; }
+        public string Name { get; set; }
+        public bool IsDefault { get; set; }
+        public bool Proforma { get; set; }
+        public int FromToType { get; set; }
+    }
     public class GetReservationDetailServices
     {
         public int OrderNumber { get; set; }
         public string Note { get; set; }
         public CountryInfo DepartureCountry { get; set; }
-        public CityInfo DepartureCity { get; set; }
+        public CityInfos DepartureCity { get; set; }
         public CountryInfo ArrivalCountry { get; set; }
-        public CityInfo ArrivalCity { get; set; }
+        public CityInfos ArrivalCity { get; set; }
         public ServiceDetails ServiceDetails { get; set; }
-        public string PartnerServiceId { get; set; }
+        //public string PartnerServiceId { get; set; }
         public bool IsMainService { get; set; }
         public bool IsRefundable { get; set; }
         public bool Bundle { get; set; }
         public List<CancellationPolicy> CancellationPolicies { get; set; }
-        public List<Document> Documents { get; set; }
+        public List<Documented> Documents { get; set; }
+        public string ProviderBookingID { get; set; }
+        public string SupplierBookingNumber { get; set; }
         public string EncryptedServiceNumber { get; set; }
         public List<PriceBreakDown> PriceBreakDowns { get; set; }
-        public int Commission { get; set; }
+        public double Commission { get; set; }
         public ReservableInfos ReservableInfo { get; set; }
         public int Unit { get; set; }
-        public List<ConditionalSpo> ConditionalSpos { get; set; }
+        //public List<ConditionalSpo> ConditionalSpos { get; set; }
         public int ConfirmationStatus { get; set; }
         public int ServiceStatus { get; set; }
         public int ProductType { get; set; }
@@ -460,6 +499,14 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public List<string> AddressLines { get; set; }
 
     }
+    public class CityInfos
+    {
+        public string Name { get; set; }
+        public int Type { get; set; }
+        public int Provider { get; set; }
+        public bool IsTopRegion { get; set; }
+        public string Id { get; set; }
+    }
 
     public class GeoLocation
     {
@@ -469,12 +516,12 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
 
     public class CancellationPolicy
     {
-        public string BeginDate { get; set; }
+        //public string BeginDate { get; set; }
         public string DueDate { get; set; }
         public PriceInfo Price { get; set; }
         public int Provider { get; set; }
     }
-    public class ConditionalSpo { }
+    //public class ConditionalSpo { }
     public class ServiceAdditionalFields
     {
         public string IsRefundable { get; set; }
@@ -503,9 +550,9 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
 
     public class GetReservationDetailPaymentPlanPrice
     {
-        public int Percent { get; set; }
+        public double Percent { get; set; }
 
-        public int Amount { get; set; }
+        public double Amount { get; set; }
 
         public string Currency { get; set; }
 

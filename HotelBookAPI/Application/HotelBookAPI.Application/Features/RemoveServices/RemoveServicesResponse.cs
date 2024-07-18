@@ -100,7 +100,7 @@ namespace HotelBookAPI.Application.Features.RemoveServices
 
         public int PassengerType { get; set; }
 
-        public List<AdditionalField> AdditionalFields { get; set; }
+        public AdditionalField AdditionalFields { get; set; }
 
         public List<InsertField> InsertFields { get; set; }
 
@@ -181,7 +181,7 @@ namespace HotelBookAPI.Application.Features.RemoveServices
         public string TravellerTypeOrder { get; set; }
         public string TravellerUniqueID { get; set; }
         public string TourVisio_TravellerId { get; set; }
-        public string Paximum_TravellerId { get; set; }
+        //public string Paximum_TravellerId { get; set; }
         public string BirthDateFrom { get; set; }
         public string BirthDateTo { get; set; }
 
@@ -298,9 +298,9 @@ namespace HotelBookAPI.Application.Features.RemoveServices
     public class RemoveServiceAgencyAddressCity
     {
 
-        public string InternationalCode { get; set; }
-
         public string Name { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
 
         public int Provider { get; set; }
 
@@ -409,7 +409,7 @@ namespace HotelBookAPI.Application.Features.RemoveServices
         public List<Document> Documents { get; set; }
         public string EncryptedServiceNumber { get; set; }
         public List<PriceBreakDown> PriceBreakDowns { get; set; }
-        public int Commission { get; set; }
+        public double Commission { get; set; }
         public ReservableInfos ReservableInfo { get; set; }
         public int Unit { get; set; }
         public List<ConditionalSpo> ConditionalSpos { get; set; }
@@ -509,9 +509,9 @@ namespace HotelBookAPI.Application.Features.RemoveServices
 
     public class RemoveServicesPaymentPlanPrice
     {
-        public int Percent { get; set; }
+        public double Percent { get; set; }
 
-        public int Amount { get; set; }
+        public double Amount { get; set; }
 
         public string Currency { get; set; }
 
