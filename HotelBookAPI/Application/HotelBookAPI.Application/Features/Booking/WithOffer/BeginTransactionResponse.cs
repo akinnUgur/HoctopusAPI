@@ -15,31 +15,14 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
     public class BeginTransactionResponse
     {
         public Header Header { get; set; }
+        public BookWithOfferBody? Body { get; set; }
 
     }
 
-    public class Header
-    {
-        public string RequestID { get; set; }
-        public bool Success { get; set; }
-        public DateTime ResponseTime { get; set; }
 
-        public List<Message> Messages { get; set; }
-    }
 
-    public class Message
-    {
-        public int Id { get; set; }
 
-        public string Code { get; set; }
-
-        public int MessageType { get; set; }
-
-        public string MessageText { get; set; }
-
-    }
-
-    public class Body
+    public class BookWithOfferBody
     {
 
         public string TransactionId { get; set; }
@@ -65,7 +48,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
         public PaymentDetail PaymentDetail { get; set; }
 
         
-        public List<Object> Invoices { get; set; }
+
     }
 
     public class Traveller
@@ -407,13 +390,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
         public int OrderNumber { get; set; }
         public string Note { get; set; }
 
-        public DepartureCountry DepartureCountry { get; set; }
 
-        public DepartureCity DepartureCity { get; set; }
-        public ArrivalCountry ArrivalCountry { get; set; }
-        public ArrivalCity ArrivalCity { get; set; }
-
-        public ServiceDetails ServiceDetails { get; set; }
 
         public string PartnerServiceId { get; set; }
 
@@ -425,25 +402,20 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public List<CancellationPolicy> CancellationPolicies { get; set; }
 
-        public List<object> Documents { get; set; }
 
         public string EncryptedServiceNumber { get; set; }
 
-        public List<object> PriceBreakDowns { get; set; }
 
         public decimal Commission { get; set; }
 
-        public ReservableInfo ReservableInfo { get; set; }
 
         public int Unit { get; set; }
 
-        public List<object> ConditionalSpos { get; set; }
 
         public int ConfirmationStatus { get; set; }
 
         public int ServiceStatus { get; set; }
 
-        public int ProductType { get; set; }
 
         public int Id { get; set; }
 
@@ -471,7 +443,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public int Provider { get; set; }
 
-        public List<Traveller> Travellers { get; set; }
+        public List<string> Travellers { get; set; }
 
         public bool ThirdPartyRecord { get; set; }
 

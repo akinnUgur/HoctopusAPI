@@ -10,12 +10,12 @@ namespace HotelBookAPI.Application.Features.ProductInfo
 {
     public class ProductInfoResponse
     {
-        public Header Header{ get; set; }
+
 
         public ProductInfoBody? Body{ get; set; }
     }
 
-  
+
 
 
     public class ProductInfoBody
