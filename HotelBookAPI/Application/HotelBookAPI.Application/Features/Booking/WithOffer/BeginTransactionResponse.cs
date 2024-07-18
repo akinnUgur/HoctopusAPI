@@ -16,7 +16,6 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
     {
         public Header Header { get; set; }
 
-        public Body? Body { get; set; }
     }
 
     public class Header
@@ -66,11 +65,11 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
         public PaymentDetail PaymentDetail { get; set; }
 
         
+        public List<Object> Invoices { get; set; }
     }
 
     public class Traveller
     {
-        public string TravellerId { get; set; }
         public int Type { get; set; }
 
         public int Title { get; set; }
