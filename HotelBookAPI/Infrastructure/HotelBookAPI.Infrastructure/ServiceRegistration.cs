@@ -45,6 +45,9 @@ namespace HotelBookAPI.Infrastructure
             services.AddTransient<IRemoveServicesService, RemoveServicesService>();
             services.AddTransient<IGetReservationDetailsService, GetReservationDetailsServices>();
 
+            services.AddTransient<IReservationService, ReservationService>();
+
+            services.AddTransient<ITransactionService,  TransactionService>();
 
 
         }
