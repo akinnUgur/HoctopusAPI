@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HotelBookAPI.Application.Features.Common;
+using HotelBookAPI.Application.Interfaces;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,15 @@ namespace HotelBookAPI.Application.Features.SetReservationInfo
 {
     public class SetReservationInfoHandler : CommonHandler, IRequestHandler<SetReservationInfoRequest, SetReservationInfoResponse>
     {
-        public SetReservationInfoHandler(IMapper mapper) : base(mapper)
+        private readonly IReservationService _reservationService;
+        public SetReservationInfoHandler(IMapper mapper, IReservationService reservationService) : base(mapper)
         {
+            _reservationService = reservationService;
         }
 
-        public Task<SetReservationInfoResponse> Handle(SetReservationInfoRequest request, CancellationToken cancellationToken)
+        public async Task<SetReservationInfoResponse> Handle(SetReservationInfoRequest request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _reservationService.SetReservationInfoAsync(request, cancellationToken);
         }
     }
 }

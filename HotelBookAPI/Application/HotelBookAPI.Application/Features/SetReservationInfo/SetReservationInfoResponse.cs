@@ -27,30 +27,31 @@ namespace HotelBookAPI.Application.Features.SetReservationInfo
 
     public class ReservationData
     {
+        public List<Traveller> Travellers { get; set; }
         public ReservationInfo ReservationInfo { get; set; }
     }
 
     public class ReservationInfo
     {
         public string BookingNumber { get; set; }
-        public Agency Agency { get; set; }
+        //public Agency Agency { get; set; }
         public string BeginDate { get; set; }
         public string EndDate { get; set; }
         public string Note { get; set; }
         public string AgencyReservationNumber { get; set; }
         public Price SalePrice { get; set; }
         public Price SupplementDiscount { get; set; }
-        public Price PassengerEB { get; set; }
-        public Price AgencyEB { get; set; }
-        public Price PassengerAmountToPay { get; set; }
-        public Price AgencyAmountToPay { get; set; }
-        public Price Discount { get; set; }
-        public Price AgencyBalance { get; set; }
-        public Price PassengerBalance { get; set; }
-        public Commission AgencyCommission{ get; set; }
-        public Commission BrokerCommission { get; set; }
-        public Commission AgencySupplementCommission { get; set; }
-        public Price PriceToPay { get; set; }
+        //public Price PassengerEB { get; set; }
+        //public Price AgencyEB { get; set; }
+        //public Price PassengerAmountToPay { get; set; }
+        //public Price AgencyAmountToPay { get; set; }
+        //public Price Discount { get; set; }
+        //public Price AgencyBalance { get; set; }
+        //public Price PassengerBalance { get; set; }
+        //public Commission AgencyCommission{ get; set; }
+        //public Commission BrokerCommission { get; set; }
+        //public Commission AgencySupplementCommission { get; set; }
+        //public Price PriceToPay { get; set; }
         public Price AgencyPriceToPay { get; set; }
         public Price PassengerPriceToPay { get; set; }
         public Price TotalPrice { get; set; }
