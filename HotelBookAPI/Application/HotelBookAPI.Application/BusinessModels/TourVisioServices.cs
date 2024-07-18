@@ -21,6 +21,7 @@ namespace HotelBookAPI.Application.BusinessModels
         GetOffers,
         [Description("productservice/getofferdetails")]
         GetOfferDetails,
+
         [Description("bookingservice/begintransaction")]
         BeginTransaction,
         [Description("bookingservice/addservices")]
