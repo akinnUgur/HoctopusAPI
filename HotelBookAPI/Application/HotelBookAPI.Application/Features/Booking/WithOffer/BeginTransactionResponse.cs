@@ -16,7 +16,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
     {
         public Header Header { get; set; }
 
-        public Body Body { get; set; }
+        public Body? Body { get; set; }
     }
 
     public class Header
@@ -65,19 +65,15 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public PaymentDetail PaymentDetail { get; set; }
 
-        public List<Object> Invoices { get; set; }
+        
     }
 
     public class Traveller
     {
-        public int TravellerId { get; set; }
+        public string TravellerId { get; set; }
         public int Type { get; set; }
 
         public int Title { get; set; }
-
-        public List<Title> AvailableTitles { get; set; }
-
-        public List<Title> AvailableAcademicTitles { get; set; }
 
         public bool IsLeader { get; set; }
 
@@ -89,32 +85,23 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public PassportInfo PassportInfo { get; set; }
 
-        public Address Adress { get; set; }
 
-        public DestinationAddress DestinationAddress { get; set; }
-
-        public List<Service> Services { get; set; }
+      //  public List<Service> Services { get; set; }
 
         public int OrderNumber { get; set; }
 
-        public DateTime BirthDateFrom { get; set; }
 
-        public DateTime BirthDateTo { get; set; }
 
         public List<string> RequiredFields { get; set; }
 
 
-        public List<object> Documents { get; set; }
 
         public int PassengerType { get; set; }
 
-        public AdditionalField AdditionalFields { get; set; }
 
-        public List<object> InsertFields { get; set; }
 
-        public int Status { get; set; }
 
-        public AcademicTitle AcademicTitle { get; set; }
+
 
 
     }
@@ -130,20 +117,18 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public Agency Agency { get; set; }
 
-        public AgencyUser AgencyUser { get; set; }
-
 
         public DateTime BeginDate { get; set; }
 
         public DateTime EndDate { get; set; }
 
-        public string Note { get; set; }
+      
 
         public Price SalePrice { get; set; }
 
         public Price SupplementDiscount { get; set; }
 
-        public Price PassengerFB { get; set; }
+        public Price PassengerEB { get; set; }
 
         public Price AgencyEB { get; set; }
 
@@ -206,19 +191,10 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public AdditionalField AdditionalField { get; set; }
 
-        public string AdditionalCode1 { get; set; }
 
 
-        public string AdditionalCode2 { get; set; }
 
-
-        public string AdditionalCode3 { get; set; }
-
-
-        public string AdditionalCode4 { get; set; }
-
-
-        public int AgencyDiscount { get; set; }
+        public double AgencyDiscount { get; set; }
 
 
         public bool HasAvailablePromotionCode { get; set; }
@@ -401,8 +377,8 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
     public class Commission
     {
-        public int Percent { get; set; }
-        public decimal Amount { get; set; }
+        public double Percent { get; set; }
+        public double Amount { get; set; }
         public string Currency {  get; set; }
     }
     public class AdditionalField
@@ -586,7 +562,6 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
     public class PaymentDetail
     {
         public List<PaymentPlan> PaymentPlan { get; set; }
-        public List<object> PaymentInfo { get; set; }
     }
 
     public class PaymentPlan
