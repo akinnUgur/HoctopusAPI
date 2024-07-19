@@ -1,6 +1,4 @@
 ﻿using HotelBookAPI.Application.DTOs.Common;
-using HotelBookAPI.Application.Features.AddServices;
-using HotelBookAPI.Application.Features.ProductInfo;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,22 +12,9 @@ namespace HotelBookAPI.Application.Features.RemoveServices
 {
     public class RemoveServicesResponse
     {
-        public RemoveServicesHeader Header { get; set; }
+        public Header Header { get; set; }
 
         public RemoveServicesBody? Body { get; set; }
-    }
-
-    public class RemoveServicesHeader
-    {
-        public string RequestId { get; set; }
-        public bool Success { get; set; }
-        public List<RemoveServicesInfoMessages> Messages { get; set; }
-    }
-
-    public class RemoveServicesInfoMessages
-    {
-        public int Id { get; set; }
-        public string Message { get; set; }
     }
     public class RemoveServicesBody
     {
