@@ -11,7 +11,7 @@ namespace HotelBookAPI.API.Controllers
         [HttpPost("SetReservationInfo")]
         public async Task<IActionResult> SetReservationInfo(SetReservationInfoRequest request)
         {
-            var data = Mediator.Send(request);
+            var data = await Mediator.Send(request);
             return Ok(data);    
         }
     }

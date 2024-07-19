@@ -53,6 +53,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
     public class Traveller
     {
+        public string TravellerId { get; set; }
         public int Type { get; set; }
 
         public int Title { get; set; }

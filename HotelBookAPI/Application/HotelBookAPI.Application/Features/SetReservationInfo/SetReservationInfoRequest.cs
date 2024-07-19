@@ -20,18 +20,28 @@ namespace HotelBookAPI.Application.Features.SetReservationInfo
 
 
     }
+//0	:	travellerId
+//1	:	type
+//2	:	title
+//3	:	name
+//4	:	surname
+//5	:	isleader
+//6	:	birthDate
+//7	:	leaderEmail
+//8	:	nationality
 
-      //"requiredFields": [
-      //      "travellerId",
-      //      "type",
-      //      "title",
-      //      "name",
-      //      "surname",
-      //      "isleader",
-      //      "leaderEmail",
-      //      "nationality"
-      //    ],
-    
+
+    //"requiredFields": [
+    //      "travellerId",
+    //      "type",
+    //      "title",
+    //      "name",
+    //      "surname",
+    //      "isleader",
+    //      "leaderEmail",
+    //      "nationality"
+    //    ],
+
     public class Traveller
     {
         public string TravellerId { get; set; }
@@ -40,10 +50,8 @@ namespace HotelBookAPI.Application.Features.SetReservationInfo
         public string Name { get; set; }
         public string Surname { get; set; }
         public bool IsLeader { get; set; }
-        public Nationality Nationality{ get; set; }
 
-        public string? IdentityNumber { get; set; }
-        public PassportInfo? PassportInfo { get; set; }
+        public Nationality Nationality{ get; set; }
         public Addres Address { get; set; }
 
 
@@ -55,7 +63,7 @@ namespace HotelBookAPI.Application.Features.SetReservationInfo
     }
     public class Nationality
     {
-        public string? TwoLetterCode { get; set; }
+        public string TwoLetterCode { get; set; }
 
     }
     public class PassportInfo
@@ -71,7 +79,7 @@ namespace HotelBookAPI.Application.Features.SetReservationInfo
 
     public class Addres
     {
-        public string? email { get; set; }
+        public string? Email { get; set; }
     }
 
     public class ContactPhone
