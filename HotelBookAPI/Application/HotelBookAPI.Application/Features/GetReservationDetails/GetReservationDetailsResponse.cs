@@ -1,4 +1,4 @@
-﻿using HotelBookAPI.Application.Features.GetReservationDetails;
+﻿using HotelBookAPI.Application.DTOs.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +9,9 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
 {
     public class GetReservationDetailsResponse
     {
-        public GetReservationDetailHeader Header { get; set; }
+        public Header Header { get; set; }
 
         public GetReservationDetailBody? Body { get; set; }
-    }
-    public class GetReservationDetailHeader
-    {
-        public string RequestId { get; set; }
-        public bool Success { get; set; }
-        public List<GetReservationDetailInfoMessages> Messages { get; set; }
-    }
-
-    public class GetReservationDetailInfoMessages
-    {
-        public int Id { get; set; }
-        public string Message { get; set; }
     }
     public class GetReservationDetailBody
     {
