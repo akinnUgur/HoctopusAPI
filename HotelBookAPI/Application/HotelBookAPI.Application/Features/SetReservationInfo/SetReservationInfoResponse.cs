@@ -25,11 +25,13 @@ namespace HotelBookAPI.Application.Features.SetReservationInfo
 
         [JsonProperty("status")]
         public int Status { get; set; }
+
+        public ReservationData ReservationData { get; set; }
     }
     public class ReservationData
     {
 
-        public ReservableInfo ReservationInfo{ get; set; }
+        public ReservationInfo ReservationInfo { get; set; }
     }
     public class ReservationInfo
     {
