@@ -15,18 +15,18 @@ namespace HotelBookAPI.Application.Features.AutoComplete
     {
 
         private readonly IAutoCompleteService _autocompleteService;
-        private readonly DTOService _dtoService;
+   
 
-        public AutoCompleteHandler(IMapper mapper, IAutoCompleteService autocompleteService, DTOService dtoService) : base(mapper)
+        public AutoCompleteHandler(IMapper mapper, IAutoCompleteService autocompleteService) : base(mapper)
         {
             _autocompleteService = autocompleteService;
-            _dtoService = dtoService;
+      
         }
 
         public async Task<AutoCompleteResponse> Handle(AutoCompleteRequest request, CancellationToken cancellationToken)
         {
-            var dto = await _autocompleteService.GetAutoCompleteDataAsync(_dtoService.AutoCompleteRequestTransfer(request), cancellationToken);
-            return _dtoService.AutoCompleteResponseTransfer(dto);
+           
+            return await _autocompleteService.GetAutoCompleteDataAsync(request, cancellationToken);
         }
 
     }

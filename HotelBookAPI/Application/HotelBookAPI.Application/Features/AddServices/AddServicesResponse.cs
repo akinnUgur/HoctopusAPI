@@ -12,17 +12,17 @@ namespace HotelBookAPI.Application.Features.AddServices
 {
     public class AddServicesResponse
     {
-        public Header Header { get; set; }
+        public required Header Header { get; set; }
 
         public AddServicesBody? Body { get; set; }
     }
     public class AddServicesBody
     {
-        public string TransactionId { get; set; }
+        public string? TransactionId { get; set; }
 
-        public string ExpiresOn { get; set; }
+        public string? ExpiresOn { get; set; }
 
-        public AddServicesReservationData ReservationData { get; set; }
+        public AddServicesReservationData? ReservationData { get; set; }
 
         public int Status { get; set; }
 
@@ -51,85 +51,85 @@ namespace HotelBookAPI.Application.Features.AddServices
 
         public int Title { get; set; }
 
-        public List<availableTitle> AvailableTitles { get; set; }
+        public List<availableTitle>? AvailableTitles { get; set; }
 
-        public AcademicTitle AcademicTitle { get; set; }
+        public AcademicTitle? AcademicTitle { get; set; }
 
-        public List<availableAcademicTitle> AvailableAcademicTitles { get; set; }
+        public List<availableAcademicTitle>? AvailableAcademicTitles { get; set; }
 
         public bool IsLeader { get; set; }
 
-        public string BirthDate { get; set; }
+        public string? BirthDate { get; set; }
 
-        public Nationality Nationality { get; set; }
+        public Nationality? Nationality { get; set; }
 
-        public string IdentityNumber { get; set; }
+        public string? IdentityNumber { get; set; }
 
-        public TravellerPassportInfo PassportInfo { get; set; }
+        public TravellerPassportInfo? PassportInfo { get; set; }
 
-        public TravellerAddressInfo Address { get; set; }
+        public TravellerAddressInfo?  Address { get; set; }
 
-        public TravellerDestinationAddress DestinationAddress { get; set; }
+        public TravellerDestinationAddress? DestinationAddress { get; set; }
 
-        public List<TravellersServices> Services { get; set; }
+        public List<TravellersServices>? Services { get; set; }
 
         public int OrderNumber { get; set; }
 
-        public string BirthDateFrom { get; set; }
+        public string? BirthDateFrom { get; set; }
 
-        public string BirthDateTo { get; set; }
+        public string? BirthDateTo { get; set; }
 
-        public List<string> RequiredFields { get; set; }
+        public List<string>? RequiredFields { get; set; }
 
-        public List<Document> Documents { get; set; }
+        public List<Document>? Documents { get; set; }
 
         public int PassengerType { get; set; }
 
-        public AdditionalField AdditionalFields { get; set; }
+        public AdditionalField? AdditionalFields { get; set; }
 
-        public List<InsertField> InsertFields { get; set; }
+        public List<InsertField>? InsertFields { get; set; }
 
         public int Status { get; set; }
 
     }
     public class availableTitle
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public string? Id { get; set; }
+        public string? Name { get; set; }
     }
     public class AcademicTitle
     {
-        public string Id { get; set; }
+        public string? Id { get; set; }
     }
     public class availableAcademicTitle
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public string? Id { get; set; }
+        public string? Name { get; set; }
     }
 
     public class Nationality
     {
-        public string TwoLetterCode { get; set; }
+        public required string TwoLetterCode { get; set; }
     }
 
     public class TravellerPassportInfo
     {
-        public string ExpireDate { get; set; }
-        public string IssueDate { get; set; }
-        public string CitizenshipCountryCode { get; set; }
+        public string? ExpireDate { get; set; }
+        public string? IssueDate { get; set; }
+        public string? CitizenshipCountryCode { get; set; }
     }
 
     public class TravellerAddressInfo
     {
-        public TravellerContactPhone ContactPhone { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
+        public TravellerContactPhone? ContactPhone { get; set; }
+        public string? Email { get; set; }
+        public string? Address { get; set; }
 
-        public string ZipCode { get; set; }
+        public string? ZipCode { get; set; }
 
-        public TravellerCityandCountry City { get; set; }
+        public TravellerCityandCountry? City { get; set; }
 
-        public TravellerCityandCountry Country { get; set; }
+        public TravellerCityandCountry? Country { get; set; }
 
     }
     public class TravellerContactPhone { }

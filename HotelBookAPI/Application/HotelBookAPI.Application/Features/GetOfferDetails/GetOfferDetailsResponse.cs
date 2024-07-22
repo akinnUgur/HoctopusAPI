@@ -1,4 +1,4 @@
-﻿using HotelBookAPI.Application.DTOs.AutoComplete;
+﻿
 using HotelBookAPI.Application.DTOs.Common;
 using HotelBookAPI.Application.Features.PriceSearch;
 using HotelBookAPI.Application.Features.ProductInfo;

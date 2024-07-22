@@ -1,5 +1,4 @@
 ﻿using HotelBookAPI.Application.BusinessModels;
-using HotelBookAPI.Application.DTOs.AutoComplete;
 using HotelBookAPI.Application.Features.CommitTransaction;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Settings;

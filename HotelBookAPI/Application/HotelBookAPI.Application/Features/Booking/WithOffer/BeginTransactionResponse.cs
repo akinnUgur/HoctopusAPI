@@ -1,14 +1,5 @@
-﻿using AutoMapper.Internal.Mappers;
-using HotelBookAPI.Application.DTOs.AutoComplete;
-using HotelBookAPI.Application.DTOs.Common;
-using HotelBookAPI.Application.Features.PriceSearch;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HotelBookAPI.Application.DTOs.Common;
+
 
 namespace HotelBookAPI.Application.Features.Booking.WithOffer
 {
@@ -302,7 +293,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
 
         public bool OwnAgency { get; set; }
 
-        public Country Country { get; set; }    
+        public GenericLocation Country { get; set; }    
 
         public Address Address { get; set; }
 
@@ -581,7 +572,7 @@ namespace HotelBookAPI.Application.Features.Booking.WithOffer
         public int StopSaleStandart { get; set; }
         public GeoLocation Geolocation { get; set; }
         public Location Location { get; set; }
-        public Country Country { get; set; }
+        public GenericLocation Country { get; set; }
         public City City { get; set; }
         public string Thumbnail { get; set; }
         public string Id { get; set; }

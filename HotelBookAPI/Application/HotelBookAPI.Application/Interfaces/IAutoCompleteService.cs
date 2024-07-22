@@ -1,4 +1,5 @@
-﻿using HotelBookAPI.Application.DTOs.AutoComplete;
+﻿
+using HotelBookAPI.Application.Features.AutoComplete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace HotelBookAPI.Application.Interfaces
 {
     public interface IAutoCompleteService
     {
-        Task<AutoCompleteResponseDTO> GetAutoCompleteDataAsync(AutoCompleteRequestDTO request, CancellationToken cancellationToken);
+        Task<AutoCompleteResponse> GetAutoCompleteDataAsync(AutoCompleteRequest request, CancellationToken cancellationToken);
     }
 }

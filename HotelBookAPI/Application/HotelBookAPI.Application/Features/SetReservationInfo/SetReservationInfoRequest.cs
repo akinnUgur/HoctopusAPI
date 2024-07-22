@@ -1,4 +1,4 @@
-﻿using HotelBookAPI.Application.DTOs.AutoComplete;
+﻿
 using HotelBookAPI.Application.DTOs.Common.AutoComplete;
 using MediatR;
 using System;

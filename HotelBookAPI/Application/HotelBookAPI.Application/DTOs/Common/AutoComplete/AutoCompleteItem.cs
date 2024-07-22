@@ -8,8 +8,10 @@ namespace HotelBookAPI.Application.DTOs.Common.AutoComplete
 {
     public class AutoCompleteItem
     {
-        public AutoCompleteCountry Country { get; set; }
-        public AutoCompleteCity City { get; set; }
-        public AutoCompleteHotel Hotel { get; set; }
+        public int Type { get; set; }
+        public Geolocation? Geolocation { get; set; }
+        public GenericLocation? Country { get; set; }
+        public GenericLocation? City { get; set; }
+        public GenericLocation? Hotel { get; set; }
     }
 }

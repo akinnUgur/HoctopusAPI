@@ -1,4 +1,4 @@
-﻿using HotelBookAPI.Application.DTOs.AutoComplete;
+﻿
 using HotelBookAPI.Application.DTOs.Common.AutoComplete;
 using HotelBookAPI.Application.DTOs.Common;
 using HotelBookAPI.Application.DTOs.PriceSearch;
@@ -16,52 +16,43 @@ namespace HotelBookAPI.Application.Services
     public class DTOService
     {
 
-        public AutoCompleteRequestDTO AutoCompleteRequestTransfer(AutoCompleteRequest request)
-        {
-            return new()
-            {
-                ProductType = 2, //Hotel Product Id
-                Query = request.Query,
-                Culture = request.Culture,
-            };
-        }
+        //public AutoCompleteResponse AutoCompleteResponseTransfer(AutoCompleteResponseDTO dto)
+        //{
+        //    var response = new AutoCompleteResponse
+        //    {
+        //        Header = dto.Header,
+        //        Items = new List<AutoCompleteItem>()
+        //    };
 
-        public AutoCompleteResponse AutoCompleteResponseTransfer(AutoCompleteResponseDTO dto)
-        {
-            var response = new AutoCompleteResponse
-            {
-                Items = new List<AutoCompleteItem>()
-            };
+        //    if (dto.Body != null && dto.Body.Items != null)
+        //    {
+        //        foreach (var dtoItem in dto.Body.Items)
+        //        {
+        //            var item = new AutoCompleteItem
+        //            {
+        //                Country = new AutoCompleteCountry
+        //                {
+        //                    Id = dtoItem.Country?.Id,
+        //                    Name = dtoItem.Country?.Name
+        //                },
+        //                City = new AutoCompleteCity
+        //                {
+        //                    Id = dtoItem.City?.Id,
+        //                    Name = dtoItem.City?.Name
+        //                },
+        //                Hotel = new AutoCompleteHotel
+        //                {
+        //                    Id = dtoItem.Hotel?.Id,
+        //                    Name = dtoItem.Hotel?.Name
+        //                }
+        //            };
 
-            if (dto.Body != null && dto.Body.Items != null)
-            {
-                foreach (var dtoItem in dto.Body.Items)
-                {
-                    var item = new AutoCompleteItem
-                    {
-                        Country = new AutoCompleteCountry
-                        {
-                            Id = dtoItem.Country?.Id,
-                            Name = dtoItem.Country?.Name
-                        },
-                        City = new AutoCompleteCity
-                        {
-                            Id = dtoItem.City?.Id,
-                            Name = dtoItem.City?.Name
-                        },
-                        Hotel = new AutoCompleteHotel
-                        {
-                            Id = dtoItem.Hotel?.Id,
-                            Name = dtoItem.Hotel?.Name
-                        }
-                    };
+        //            response.Items.Add(item);
+        //        }
+        //    }
 
-                    response.Items.Add(item);
-                }
-            }
-
-            return response;
-        }
+        //    return response;
+        //}
 
         public HotelBasedSearchRequestDTO ConvertPriceSearchRequest(HotelBasedSearchRequest searchRequest)
         {

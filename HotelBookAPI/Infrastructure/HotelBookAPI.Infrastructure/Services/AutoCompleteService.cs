@@ -1,5 +1,6 @@
 ﻿using HotelBookAPI.Application.BusinessModels;
-using HotelBookAPI.Application.DTOs.AutoComplete;
+
+using HotelBookAPI.Application.Features.AutoComplete;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Settings;
 using Newtonsoft.Json;
@@ -20,10 +21,10 @@ namespace HotelBookAPI.Infrastructure.Services
         
 
 
-        public async Task<AutoCompleteResponseDTO> GetAutoCompleteDataAsync(AutoCompleteRequestDTO request, CancellationToken cancellationToken)
+        public async Task<AutoCompleteResponse> GetAutoCompleteDataAsync(AutoCompleteRequest request, CancellationToken cancellationToken)
         {
             var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.AutoComplete), cancellationToken);
-            return JsonConvert.DeserializeObject<AutoCompleteResponseDTO>(response);
+            return JsonConvert.DeserializeObject<AutoCompleteResponse>(response);
       
         }
     }

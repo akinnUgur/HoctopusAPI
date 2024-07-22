@@ -10,16 +10,16 @@ namespace HotelBookAPI.Application.DTOs.Common
     public class Header
     {
 
-        public string RequestId { get; set; }
+        public required string RequestId { get; set; }
         public bool Success { get; set; }
-        public List<Message> Messages { get; set; }
+        public required List<Message> Messages { get; set; }
     }
     public class Message
     {
         public int Id { get; set; }
-        public string Code { get; set; }
+        public required string Code { get; set; }
 
         [JsonProperty("message")]
-        public string msg { get; set; }
+        public required string msg { get; set; }
     }
 }

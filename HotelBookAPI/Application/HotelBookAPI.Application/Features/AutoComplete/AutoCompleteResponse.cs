@@ -10,9 +10,12 @@ namespace HotelBookAPI.Application.Features.AutoComplete
 {
     public class AutoCompleteResponse
     {
-        public Header Header{ get; set; }
-        public ICollection<AutoCompleteItem> Items { get; set; }
-
-
+        public required Header Header { get; set; }
+        public AutoCompleteResponseBody? Body { get; set; }
     }
+    public class AutoCompleteResponseBody
+    {
+        public List<AutoCompleteItem>? Items { get; set; }
+    }
+ 
 }
