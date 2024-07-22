@@ -15,6 +15,8 @@ namespace HotelBookAPI.Application.BusinessModels
         AutoComplete,
         [Description("productservice/pricesearch")]
         PriceSearch,
+        [Description("productservice/getpagingdata")]
+        FilterPriceSearch,
         [Description("productservice/getproductinfo")]
         ProductInfo,
         [Description("productservice/getoffers")]
@@ -35,7 +37,7 @@ namespace HotelBookAPI.Application.BusinessModels
         [Description("bookingservice/getreservationdetail")]
         GetReservationDetails,
 
-
+            
 
 
 

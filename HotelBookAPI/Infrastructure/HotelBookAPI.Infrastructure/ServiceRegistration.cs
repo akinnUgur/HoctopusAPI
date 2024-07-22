@@ -32,10 +32,9 @@ namespace HotelBookAPI.Infrastructure
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             });
 
-
+            
             services.AddSingleton(httpClientSettings);
             services.AddSingleton<TokenCacheService>();
-
             services.AddTransient<IAutoCompleteService, AutoCompleteService>();
             services.AddTransient<IPriceSearchService, PriceSearchService>();
             services.AddTransient<IProductInfoService, ProductInfoService>();
@@ -44,9 +43,8 @@ namespace HotelBookAPI.Infrastructure
             services.AddTransient<IAddServicesService, AddServicesService>();
             services.AddTransient<IRemoveServicesService, RemoveServicesService>();
             services.AddTransient<IGetReservationDetailsService, GetReservationDetailsServices>();
-
+            services.AddTransient<IFilterPriceSearchService, FilterPriceSearchService>();
             services.AddTransient<IReservationService, ReservationService>();
-
             services.AddTransient<ITransactionService,  TransactionService>();
 
 

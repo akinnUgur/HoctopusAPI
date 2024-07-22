@@ -42,7 +42,7 @@ namespace HotelBookAPI.Application.Features.PriceSearch
         public AutoCompleteCity City { get; set; }
         public List<Offer> Offers { get; set; }
         public string Address { get; set; }
-
+        public string? ThumbnailFull { get; set; }
         public List<BoardGroup> BoardGroups { get; set; }
 
 

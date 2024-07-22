@@ -1,4 +1,5 @@
-﻿using HotelBookAPI.Application.Features.PriceSearch.HotelSearch;
+﻿using HotelBookAPI.Application.Features.FilterPriceSearch;
+using HotelBookAPI.Application.Features.PriceSearch.HotelSearch;
 using HotelBookAPI.Application.Features.PriceSearch.LocationSearch;
 using HotelBookAPI.Application.Features.ProductInfo;
 using Microsoft.AspNetCore.Http;
@@ -19,6 +20,14 @@ namespace HotelBookAPI.API.Controllers
 
         [HttpPost("LocationBasedSearch")]
         public async Task<IActionResult> LocationBasedSearch([FromBody] LocationBasedSearchRequest request)
+        {
+            var data = await Mediator.Send(request);
+            return Ok(data);
+        }
+
+
+        [HttpPost("Filter")]
+        public async Task<IActionResult> FilterPriceSearch([FromBody] FilterPriceSearchRequest request)
         {
             var data = await Mediator.Send(request);
             return Ok(data);

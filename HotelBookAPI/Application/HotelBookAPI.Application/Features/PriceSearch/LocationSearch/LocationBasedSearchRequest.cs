@@ -22,5 +22,8 @@ namespace HotelBookAPI.Application.Features.PriceSearch.LocationSearch
 
         [JsonIgnore]
         public string Culture { get; set; } = "en-US";
+
     }
+
+
 }
