@@ -100,6 +100,11 @@ namespace HotelBookAPI.Application.Services
                 Night = searchRequest.Night,
                 Culture = searchRequest.Culture,
                 Currency = searchRequest.Currency,
+                PagingOption = new()
+                {
+                    CurrentPage = 1,
+                    PageRowCount = 0
+                }
             };
 
         }
