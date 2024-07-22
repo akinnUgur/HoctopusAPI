@@ -11,19 +11,31 @@ namespace HotelBookAPI.Application.Features.PriceSearch.LocationSearch
 {
     public class LocationBasedSearchRequest : IRequest<PriceSearchResponse>
     {
-        public List<ArrivalLocation> ArrivalLocations { get; set; }
-        public List<RoomCriteria> RoomCriteria { get; set; }
-
-        public string Nationality { get; set; }
-
-        public string CheckIn { get; set; }
-        public int Night { get; set; }
-        public string Currency { get; set; }
-
+        [JsonIgnore]
+        public bool CheckAllotment { get; set; } = true;
+        [JsonIgnore]
+        public bool CheckStopSale { get; set; } = true;
+        [JsonIgnore]
+        public bool GetOnlyDiscountedPrice { get; set; } = false;
+        [JsonIgnore]
+        public bool GetOnlyBestOffers { get; set; } = true;
+        [JsonIgnore]
+        public int ProductType { get; set; } = 2;
         [JsonIgnore]
         public string Culture { get; set; } = "en-US";
+        public required List<ArrivalLocation> ArrivalLocations { get; set; }
+        public required List<RoomCriteria> RoomCriteria { get; set; }
+        public required string Nationality { get; set; }
+        public required string CheckIn { get; set; }
+        public required int Night { get; set; }
+        public required string Currency { get; set; }
+
+        public PagingOption? PagingOption { get; set; }
+    }
+    public class PagingOption
+    {
+        public int CurrentPage { get; set; } = 1;
+        public int PageRowCount { get; set; } = 0;
 
     }
-
-
 }

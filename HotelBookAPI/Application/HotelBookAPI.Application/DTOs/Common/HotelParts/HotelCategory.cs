@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelBookAPI.Application.DTOs.Common
+namespace HotelBookAPI.Application.DTOs.Common.HotelParts
 {
     public class HotelCategory
     {

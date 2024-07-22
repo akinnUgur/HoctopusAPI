@@ -1,4 +1,5 @@
 ﻿using HotelBookAPI.Application.DTOs.Common;
+using HotelBookAPI.Application.DTOs.Common.OfferClasses;
 using HotelBookAPI.Application.Features.PriceSearch;
 using Newtonsoft.Json;
 using System;

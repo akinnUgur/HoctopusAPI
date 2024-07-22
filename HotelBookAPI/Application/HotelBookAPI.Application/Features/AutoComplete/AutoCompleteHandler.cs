@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using HotelBookAPI.Application.Features.Common;
 using HotelBookAPI.Application.Interfaces;
-using HotelBookAPI.Application.Services;
+
 using MediatR;
 using System;
 using System.Collections.Generic;

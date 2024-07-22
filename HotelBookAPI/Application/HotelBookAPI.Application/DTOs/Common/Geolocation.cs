@@ -9,6 +9,6 @@ namespace HotelBookAPI.Application.DTOs.Common
     public class Geolocation
     {
         public string Longitude { get; set; }
-        public string latitude { get; set; }
+        public string Latitude { get; set; }
     }
 }

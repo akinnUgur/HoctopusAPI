@@ -13,13 +13,13 @@ namespace HotelBookAPI.Application.Features.AddServices
     {
         public string TransactionId { get; set; }
 
-        public List<Offer> Offers { get; set; }
+        public List<AddServiceOffer> Offers { get; set; }
 
         public string Currency { get; set; }
 
         public string Culture { get; set; }
     }
-    public class Offer
+    public class AddServiceOffer
     {
         public string OfferId { get; set; }
 
