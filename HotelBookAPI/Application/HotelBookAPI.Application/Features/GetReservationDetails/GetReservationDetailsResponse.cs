@@ -241,7 +241,7 @@ namespace HotelBookAPI.Application.Features.GetReservationDetails
         public string AdditionalCode2 { get; set; }
         public string AdditionalCode3 { get; set; }
         public string AdditionalCode4 { get; set; }
-        public int AgencyDiscount { get; set; }
+        public double AgencyDiscount { get; set; }
         public bool HasAvailablePromotionCode { get; set; }
 
     }
