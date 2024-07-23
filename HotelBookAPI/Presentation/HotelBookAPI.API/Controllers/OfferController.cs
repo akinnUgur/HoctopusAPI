@@ -9,7 +9,6 @@ namespace HotelBookAPI.API.Controllers
     [ApiController]
     public class OfferController : BaseApiController
     {
-
         [HttpPost("GetOffers")]
         public async Task<IActionResult> GetOffersAsync(GetOffersRequest request)
         {
@@ -23,5 +22,6 @@ namespace HotelBookAPI.API.Controllers
             var data = await Mediator.Send(request);
             return Ok(data);
         }
+
     }
 }

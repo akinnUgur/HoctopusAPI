@@ -21,6 +21,13 @@ namespace HotelBookAPI.Application.DTOs.PriceSearch
         public int Night { get; set; }
         public string Currency { get; set; }
         public string Culture { get; set; }
-    }
 
+        public PagingOption PagingOption { get; set; }
+    } 
+    public class PagingOption
+    {
+        public int CurrentPage { get; set; } = 1;
+        public int PageRowCount { get; set; } = 0;
+
+    }
 }
