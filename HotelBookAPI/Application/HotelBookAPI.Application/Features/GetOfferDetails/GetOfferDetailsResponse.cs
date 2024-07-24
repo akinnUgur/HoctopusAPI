@@ -1,5 +1,7 @@
 ﻿
 using HotelBookAPI.Application.DTOs.Common;
+using HotelBookAPI.Application.DTOs.Common.HotelDatas;
+using HotelBookAPI.Application.DTOs.Common.OfferClasses;
 using HotelBookAPI.Application.Features.PriceSearch;
 using HotelBookAPI.Application.Features.ProductInfo;
 using System;
@@ -19,14 +21,6 @@ namespace HotelBookAPI.Application.Features.GetOfferDetails
     {
         public List<OfferDetails> OfferDetails { get; set; }
     }
-    public class OfferDetails
-    {
-        public string ExpiresOn { get; set; }
-        public string OfferId { get; set; }
-        public string CheckIn { get; set; }
-        public string CheckOut { get; set; }
-        public Price Price { get; set; }
-        public List<ProductInfoHotel> Hotels{ get; set; }
-    }
+
 }
 

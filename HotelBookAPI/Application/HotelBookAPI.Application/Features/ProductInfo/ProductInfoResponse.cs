@@ -20,26 +20,10 @@ namespace HotelBookAPI.Application.Features.ProductInfo
 
     public class ProductInfoBody
     {
-        public ProductInfoHotel Hotel { get; set; }
+        public HotelInfo Hotel { get; set; }
     }
 
-    public class  ProductInfoHotel
-    {
-        public List<ProductInfoSeasons> Seasons { get; set; }
-        public Geolocation Geolocation{ get; set; }
-        public string PhoneNumber { get; set; }
-        public string HomePage { get; set; }
-
-        public double Stars{ get; set; }
-
-        public string ThumbnailFull { get; set; }
-
-        [JsonProperty("description.text")]
-        public string Text{ get; set; }
-        public string Id { get; set; }
-        public string Name { get; set; }
-
-    }
+ 
 
     public class ProductInfoSeasons
     {

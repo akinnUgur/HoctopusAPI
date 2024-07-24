@@ -9,17 +9,17 @@ namespace HotelBookAPI.Application.DTOs.Common.OfferClasses
 {
     public class Offer
     {
-        public int Night { get; set; }
-        public bool IsAvailable { get; set; }
-        public int Availability { get; set; }
+        public required int Night { get; set; }
+        public required bool IsAvailable { get; set; }
+        public required int Availability { get; set; }
 
-        public List<Room>? Rooms { get; set; }
-        public bool IsRefundable { get; set; }
+        public required List<Room> Rooms { get; set; }
+        public required bool IsRefundable { get; set; }
 
-        public string? ExpiresOn { get; set; }
-        public string? OfferId { get; set; }
+        public required string ExpiresOn { get; set; }
+        public required string OfferId { get; set; }
         public string? CheckIn { get; set; }
 
-        public Price? Price { get; set; }
+        public required Price Price { get; set; }
     }
 }
