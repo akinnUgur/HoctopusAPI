@@ -51,9 +51,12 @@ namespace HotelBookAPI.Application.Features.SetReservationInfo
         public string Surname { get; set; }
         public bool IsLeader { get; set; }
 
+        public DateTime birthDate { get; set; }
+
         public Nationality Nationality{ get; set; }
         public Addres Address { get; set; }
 
+        public int Gender {  get; set; }
 
     }
 
