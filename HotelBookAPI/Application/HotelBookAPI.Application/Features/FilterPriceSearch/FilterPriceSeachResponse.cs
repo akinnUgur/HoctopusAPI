@@ -20,5 +20,5 @@ namespace HotelBookAPI.Application.Features.FilterPriceSearch
         public List<Hotel>? Hotels { get; set; }
     }
 
-   ///Filtrelenebilir otel sayılar (3 stars = 5 hotels gibi) eklenebilir
+   ///Filtrelenebilir otel sayıları (3 stars = 5 hotels gibi) eklenebilir
 }

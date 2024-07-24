@@ -30,7 +30,8 @@ namespace HotelBookAPI.Application.Features.PriceSearch.LocationSearch
         public required int Night { get; set; }
         public required string Currency { get; set; }
 
-        public PagingOption? PagingOption { get; set; }
+
+        public required PagingOption PagingOption { get; set; }
     }
     public class PagingOption
     {

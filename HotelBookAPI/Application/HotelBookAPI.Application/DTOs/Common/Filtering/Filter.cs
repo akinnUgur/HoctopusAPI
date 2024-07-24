@@ -12,7 +12,6 @@ namespace HotelBookAPI.Application.DTOs.Common.Filtering
     /// type 6 = boards {values["all inclusive", "bed & breakfast"] }
     /// type 4 = themes {values["32"]}
     /// type 7 = facilities {values ["5"]}
-    /// 
     /// </summary>  
     public class Filter
     {

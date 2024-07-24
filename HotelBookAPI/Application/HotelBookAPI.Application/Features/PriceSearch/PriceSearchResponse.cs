@@ -18,8 +18,8 @@ namespace HotelBookAPI.Application.Features.PriceSearch
 
     public class PriceSearchResponseBody
     {
-        public string? SearchId { get; set; }
-        public string? ExpiresOn { get; set; }
+        public required string SearchId { get; set; }
+        public required string ExpiresOn { get; set; }
         public List<Hotel>? Hotels { get; set; }
 
     }
