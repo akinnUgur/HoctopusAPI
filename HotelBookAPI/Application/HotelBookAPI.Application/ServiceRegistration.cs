@@ -1,4 +1,4 @@
-﻿using HotelBookAPI.Application.Services;
+﻿
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace HotelBookAPI.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
-            services.AddTransient<DTOService>();
+         
         }
     }
 }

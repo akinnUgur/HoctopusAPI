@@ -1,4 +1,4 @@
-﻿using HotelBookAPI.Application.Features.CommitTransaction;
+﻿using HotelBookAPI.Application.Features.Booking.CommitTransaction;
 using System;
 using System.Collections.Generic;
 using System.Linq;

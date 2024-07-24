@@ -1,6 +1,5 @@
 ﻿using HotelBookAPI.Application.BusinessModels;
-using HotelBookAPI.Application.Features.GetOfferDetails;
-using HotelBookAPI.Application.Features.SetReservationInfo;
+using HotelBookAPI.Application.Features.Booking.SetReservationInfo;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Settings;
 using Newtonsoft.Json;

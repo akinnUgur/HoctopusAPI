@@ -1,10 +1,9 @@
-﻿using HotelBookAPI.Application.Features.AddServices;
+﻿using HotelBookAPI.Application.Features.Booking.AddServices;
+using HotelBookAPI.Application.Features.Booking.CommitTransaction;
+using HotelBookAPI.Application.Features.Booking.GetReservationDetails;
+using HotelBookAPI.Application.Features.Booking.RemoveServices;
+using HotelBookAPI.Application.Features.Booking.SetReservationInfo;
 using HotelBookAPI.Application.Features.Booking.WithOffer;
-using HotelBookAPI.Application.Features.CommitTransaction;
-using HotelBookAPI.Application.Features.GetReservationDetails;
-using HotelBookAPI.Application.Features.RemoveServices;
-using HotelBookAPI.Application.Features.SetReservationInfo;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelBookAPI.API.Controllers
@@ -13,8 +12,8 @@ namespace HotelBookAPI.API.Controllers
     [ApiController]
     public class BookingController : BaseApiController
     {
-        [HttpPost("BookWithOffer")]
-        public async Task<IActionResult> BookWithOffer([FromBody] BeginTransactionWithOfferRequest request)
+        [HttpPost("BeginTransaction")]
+        public async Task<IActionResult> BookWithOffer([FromBody] BeginTransactionRequest request)
         {
             var data = await Mediator.Send(request);
 

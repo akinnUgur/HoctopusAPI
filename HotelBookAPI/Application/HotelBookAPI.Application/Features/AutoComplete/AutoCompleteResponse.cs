@@ -1,5 +1,5 @@
-﻿using HotelBookAPI.Application.DTOs.Common;
-using HotelBookAPI.Application.DTOs.Common.AutoComplete;
+﻿using HotelBookAPI.Application.DTOs.AutoComplete;
+using HotelBookAPI.Application.DTOs.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +10,12 @@ namespace HotelBookAPI.Application.Features.AutoComplete
 {
     public class AutoCompleteResponse
     {
-        public Header Header{ get; set; }
-        public ICollection<AutoCompleteItem> Items { get; set; }
-
-
+        public required Header Header { get; set; }
+        public AutoCompleteResponseBody? Body { get; set; }
     }
+    public class AutoCompleteResponseBody
+    {
+        public List<AutoCompleteItem>? Items { get; set; }
+    }
+ 
 }
