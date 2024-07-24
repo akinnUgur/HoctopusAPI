@@ -1,6 +1,5 @@
 ﻿using HotelBookAPI.Application.BusinessModels;
-using HotelBookAPI.Application.Features.AddServices;
-using HotelBookAPI.Application.Features.RemoveServices;
+using HotelBookAPI.Application.Features.Booking.RemoveServices;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Services;
 using HotelBookAPI.Infrastructure.Settings;

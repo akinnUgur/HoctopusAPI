@@ -16,7 +16,7 @@ namespace HotelBookAPI.Infrastructure.Services
     {
         public BeginTransactionService(HttpClientSettings httpClientSettings,IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory,tokenCacheService){ }
 
-        public async Task<BeginTransactionResponse> BeginTransactionWithOfferAsync(BeginTransactionWithOfferRequest request, CancellationToken cancellationToken)
+        public async Task<BeginTransactionResponse> BeginTransactionWithOfferAsync(BeginTransactionRequest request, CancellationToken cancellationToken)
         {
             var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.BeginTransaction), cancellationToken);
             return JsonConvert.DeserializeObject<BeginTransactionResponse>(response);

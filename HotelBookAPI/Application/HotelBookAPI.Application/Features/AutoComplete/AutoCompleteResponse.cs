@@ -1,5 +1,5 @@
-﻿using HotelBookAPI.Application.DTOs.Common;
-using HotelBookAPI.Application.DTOs.Common.AutoComplete;
+﻿using HotelBookAPI.Application.DTOs.AutoComplete;
+using HotelBookAPI.Application.DTOs.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,7 +1,6 @@
-﻿
-using HotelBookAPI.Application.Features.PriceSearch;
-using HotelBookAPI.Application.Features.PriceSearch.HotelSearch;
-using HotelBookAPI.Application.Features.PriceSearch.LocationSearch;
+﻿using HotelBookAPI.Application.Features.Product.PriceSearch;
+using HotelBookAPI.Application.Features.Product.PriceSearch.HotelSearch;
+using HotelBookAPI.Application.Features.Product.PriceSearch.LocationSearch;
 using System;
 using System.Collections.Generic;
 using System.Linq;

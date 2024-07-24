@@ -1,5 +1,5 @@
-﻿using HotelBookAPI.Application.Features.GetOfferDetails;
-using HotelBookAPI.Application.Features.GetOffers;
+﻿using HotelBookAPI.Application.Features.Product.GetOfferDetails;
+using HotelBookAPI.Application.Features.Product.GetOffers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,6 +1,5 @@
 ﻿using HotelBookAPI.Application.BusinessModels;
-using HotelBookAPI.Application.Features.PriceSearch;
-using HotelBookAPI.Application.Features.ProductInfo;
+using HotelBookAPI.Application.Features.Product.ProductInfo;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Settings;
 using Newtonsoft.Json;

@@ -9,7 +9,7 @@ namespace HotelBookAPI.Application.Interfaces
 {
     public interface IBeginTransactionService
     {
-        Task<BeginTransactionResponse> BeginTransactionWithOfferAsync(BeginTransactionWithOfferRequest request, CancellationToken 
+        Task<BeginTransactionResponse> BeginTransactionWithOfferAsync(BeginTransactionRequest request, CancellationToken 
             cancellationToken);
 
     }
