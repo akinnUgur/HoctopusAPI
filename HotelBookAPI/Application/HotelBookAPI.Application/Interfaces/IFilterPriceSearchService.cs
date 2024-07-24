@@ -1,4 +1,4 @@
-﻿using HotelBookAPI.Application.Features.FilterPriceSearch;
+﻿using HotelBookAPI.Application.Features.Product.FilterPriceSearch;
 using System;
 using System.Collections.Generic;
 using System.Linq;

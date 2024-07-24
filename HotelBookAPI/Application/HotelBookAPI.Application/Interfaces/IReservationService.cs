@@ -1,4 +1,4 @@
-﻿using HotelBookAPI.Application.Features.SetReservationInfo;
+﻿using HotelBookAPI.Application.Features.Booking.SetReservationInfo;
 using System;
 using System.Collections.Generic;
 using System.Linq;

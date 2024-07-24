@@ -8,7 +8,7 @@ namespace HotelBookAPI.Application.DTOs.Common
 {
     public class Price
     {
-        public double Amount { get; set; }
-        public string Currency { get; set; }
+        public required double Amount { get; set; }
+        public required string Currency { get; set; }
     }
 }

@@ -1,7 +1,7 @@
-﻿using HotelBookAPI.Application.Features.FilterPriceSearch;
-using HotelBookAPI.Application.Features.PriceSearch.HotelSearch;
-using HotelBookAPI.Application.Features.PriceSearch.LocationSearch;
-using HotelBookAPI.Application.Features.ProductInfo;
+﻿using HotelBookAPI.Application.Features.Product.FilterPriceSearch;
+using HotelBookAPI.Application.Features.Product.PriceSearch.HotelSearch;
+using HotelBookAPI.Application.Features.Product.PriceSearch.LocationSearch;
+using HotelBookAPI.Application.Features.Product.ProductInfo;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

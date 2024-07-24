@@ -1,5 +1,6 @@
-﻿using HotelBookAPI.Application.DTOs.PriceSearch;
-using HotelBookAPI.Application.Features.PriceSearch;
+﻿using HotelBookAPI.Application.Features.Product.PriceSearch;
+using HotelBookAPI.Application.Features.Product.PriceSearch.HotelSearch;
+using HotelBookAPI.Application.Features.Product.PriceSearch.LocationSearch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace HotelBookAPI.Application.Interfaces
 {
     public interface IPriceSearchService
     {
-        Task<PriceSearchResponse> LocationBasedSearchAsync(LocationBasedSearchRequestDTO request, CancellationToken cancellationToken);
+        Task<PriceSearchResponse> LocationBasedSearchAsync(LocationBasedSearchRequest request, CancellationToken cancellationToken);
 
-        Task<PriceSearchResponse> HotelBasedSearchAsync(HotelBasedSearchRequestDTO request, CancellationToken cancellationToken);
+        Task<PriceSearchResponse> HotelBasedSearchAsync(HotelBasedSearchRequest request, CancellationToken cancellationToken);
     }
 }

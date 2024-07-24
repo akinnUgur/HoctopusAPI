@@ -1,4 +1,4 @@
-﻿using HotelBookAPI.Application.Features.ProductInfo;
+﻿using HotelBookAPI.Application.Features.Product.ProductInfo;
 using System;
 using System.Collections.Generic;
 using System.Linq;

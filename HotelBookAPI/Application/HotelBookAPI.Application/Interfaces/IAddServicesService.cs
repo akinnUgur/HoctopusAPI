@@ -1,7 +1,4 @@
-﻿using HotelBookAPI.Application.DTOs.PriceSearch;
-using HotelBookAPI.Application.Features.AddServices;
-using HotelBookAPI.Application.Features.PriceSearch;
-using HotelBookAPI.Application.Features.ProductInfo;
+﻿using HotelBookAPI.Application.Features.Booking.AddServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;

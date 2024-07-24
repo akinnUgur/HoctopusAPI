@@ -1,6 +1,5 @@
 ﻿using HotelBookAPI.Application.BusinessModels;
-using HotelBookAPI.Application.Features.AddServices;
-using HotelBookAPI.Application.Features.GetReservationDetails;
+using HotelBookAPI.Application.Features.Booking.GetReservationDetails;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Settings;
 using Newtonsoft.Json;
@@ -20,7 +19,7 @@ namespace HotelBookAPI.Infrastructure.Services
 
         public async Task<GetReservationDetailsResponse> GetReservationDetailsAsync(GetReservationDetailsRequest request, CancellationToken cancellationToken)
         {
-            var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.AddServices), cancellationToken);
+            var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.GetReservationDetails), cancellationToken);
             return JsonConvert.DeserializeObject<GetReservationDetailsResponse>(response);
         }
     }
