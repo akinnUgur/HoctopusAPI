@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace HotelBookAPI.Application.DTOs.Common
 {
-    public class Price
+    public class TravellerRequest : Traveller
     {
-        public required double Amount { get; set; }
-        public required string Currency { get; set; }
+        public required string Name { get; set; }
+        public required string Surname { get; set; }
+
     }
 }

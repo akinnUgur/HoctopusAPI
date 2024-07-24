@@ -9,11 +9,11 @@ namespace HotelBookAPI.Application.DTOs.Common.OfferClasses
 {
     public class OfferDetails
     {
-        public string ExpiresOn { get; set; }
-        public string OfferId { get; set; }
-        public string CheckIn { get; set; }
-        public string CheckOut { get; set; }
-        public Price Price { get; set; }
-        public List<HotelInfo> Hotels { get; set; }
+        public required string ExpiresOn { get; set; }
+        public required string OfferId { get; set; }
+        public required string CheckIn { get; set; }
+        public required string CheckOut { get; set; }
+        public required Price Price { get; set; }
+        public required List<HotelInfo> Hotels { get; set; }
     }
 }

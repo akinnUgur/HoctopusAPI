@@ -9,7 +9,7 @@ namespace HotelBookAPI.Application.Features.Booking.CommitTransaction
 {
     public class CommitTransactionRequest : IRequest<CommitTransactionResponse>
     {
-        public string TransactionId { get; set; }
+        public required string TransactionId { get; set; }
 
     }
 }

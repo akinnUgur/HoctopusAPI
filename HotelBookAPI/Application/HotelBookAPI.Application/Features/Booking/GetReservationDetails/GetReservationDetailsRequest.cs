@@ -10,6 +10,6 @@ namespace HotelBookAPI.Application.Features.Booking.GetReservationDetails
 {
     public class GetReservationDetailsRequest : IRequest<GetReservationDetailsResponse>
     {
-        public string ReservationNumber { get; set; }
+        public required string ReservationNumber { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace HotelBookAPI.Application.Features.Product.ProductInfo
 
         [JsonIgnore]
         public int OwnerProvider { get; set; } = 2;
-        public string Product { get; set; }
+        public required string Product { get; set; }
 
         [JsonIgnore]
         public string Culture { get; set; } = "en-US";

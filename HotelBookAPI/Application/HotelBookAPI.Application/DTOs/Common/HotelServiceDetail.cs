@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelBookAPI.Application.DTOs.Common.HotelParts
+namespace HotelBookAPI.Application.DTOs.Common
 {
-    public class HotelCategory
+    public class HotelServiceDetail
     {
+        public int Id { get; set; }
         public required string Name { get; set; }
-        public required string Id { get; set; }
-        public string? Code { get; set; }
+        public required Geolocation Geolocation { get; set; }
 
     }
 }

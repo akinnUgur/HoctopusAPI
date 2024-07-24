@@ -50,11 +50,7 @@ namespace HotelBookAPI.Application.DTOs.Common
 
         public int OrderNumber { get; set; }
 
-
-
-        public required List<string> RequiredFields { get; set; }
-
-
+       // public required List<string> RequiredFields { get; set; }
 
         public int PassengerType { get; set; }
     }

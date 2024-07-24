@@ -8,7 +8,7 @@ namespace HotelBookAPI.Application.DTOs.Common.HotelParts
 {
     public class BoardGroup
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public string? Id { get; set; }
+        public string? Name { get; set; }
     }
 }

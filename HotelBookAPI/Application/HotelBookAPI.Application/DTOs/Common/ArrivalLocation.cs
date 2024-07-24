@@ -8,7 +8,7 @@ namespace HotelBookAPI.Application.DTOs.Common
 {
     public class ArrivalLocation
     {
-        public string Id { get; set; }
+        public string? Id { get; set; }
         public int Type { get; set; }
     }
 }

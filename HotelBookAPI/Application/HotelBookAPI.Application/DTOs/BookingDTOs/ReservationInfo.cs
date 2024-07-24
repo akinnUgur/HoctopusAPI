@@ -11,6 +11,8 @@ namespace HotelBookAPI.Application.DTOs.BookingDTOs
     {
         public required string BookingNumber { get; set; }
         public required Price SalePrice { get; set; }
+        public required string BeginDate { get; set; }
+        public required string EndDate { get; set; }
 
     }
 }

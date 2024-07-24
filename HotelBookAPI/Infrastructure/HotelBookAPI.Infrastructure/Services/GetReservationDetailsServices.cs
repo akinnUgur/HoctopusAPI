@@ -19,7 +19,7 @@ namespace HotelBookAPI.Infrastructure.Services
 
         public async Task<GetReservationDetailsResponse> GetReservationDetailsAsync(GetReservationDetailsRequest request, CancellationToken cancellationToken)
         {
-            var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.AddServices), cancellationToken);
+            var response = await PostAsync(request, EnumHelper.GetEnumDescription(TourVisioServices.GetReservationDetails), cancellationToken);
             return JsonConvert.DeserializeObject<GetReservationDetailsResponse>(response);
         }
     }

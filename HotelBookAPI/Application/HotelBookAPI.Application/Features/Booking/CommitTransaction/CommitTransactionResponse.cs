@@ -9,16 +9,17 @@ namespace HotelBookAPI.Application.Features.Booking.CommitTransaction
 {
     public class CommitTransactionResponse
     {
-        public Header Header { get; set; }
+        public required Header Header { get; set; }
+
         public CommitTransactionBody? Body { get; set; }
 
     }
 
     public class CommitTransactionBody
     {
-        public string ReservationNumber { get; set; }
-        public string EncryptedReservationNumber { get; set; }
-        public string TransactionId { get; set; }
+        public required string ReservationNumber { get; set; }
+        public required string EncryptedReservationNumber { get; set; }
+        public required string TransactionId { get; set; }
 
     }
 
