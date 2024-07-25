@@ -41,9 +41,9 @@ namespace HotelBookAPI.Application.DTOs.Common
 
         public required Nationality Nationality { get; set; }
 
-        public required string IdentityNumber { get; set; }
+        public string? IdentityNumber { get; set; }
 
-        public required PassportInfo PassportInfo { get; set; }
+        public PassportInfo? PassportInfo { get; set; }
 
 
         //  public List<Service> Services { get; set; }

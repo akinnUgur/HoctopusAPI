@@ -12,6 +12,8 @@ namespace HotelBookAPI.Application.DTOs.Common
         public string? Number { get; set; }
         public string? ExpireDate { get; set; }
         public string? IssueDate { get; set; }
+        public string? IssueCountryCode { get; set; }
+
         public string? CitizenshipCountryCode { get; set; }
 
 
