@@ -53,5 +53,8 @@ namespace HotelBookAPI.Application.DTOs.Common
        // public required List<string> RequiredFields { get; set; }
 
         public int PassengerType { get; set; }
+
+        public int Gender { get; set; }
+
     }
 }
