@@ -43,7 +43,7 @@ namespace HotelBookAPI.Infrastructure
             });
 
            //services.AddSingleton(httpClientSettings);
-            services.AddTransient<EmailService>();
+            services.AddTransient<IEmailService, EmailService>();
             services.AddSingleton<TokenCacheService>();
             services.AddTransient<IAutoCompleteService, AutoCompleteService>();
             services.AddTransient<IPriceSearchService, PriceSearchService>();
