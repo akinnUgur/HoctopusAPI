@@ -2,7 +2,8 @@
 using HotelBookAPI.Application.Features.Product.GetOfferDetails;
 using HotelBookAPI.Application.Features.Product.GetOffers;
 using HotelBookAPI.Application.Interfaces;
-using HotelBookAPI.Infrastructure.Settings;
+using HotelBookAPI.Application.Settings;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace HotelBookAPI.Infrastructure.Services
 {
     public class OfferService : BaseHTTPService, IOfferService
     {
-        public OfferService(HttpClientSettings httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory, tokenCacheService)
+        public OfferService(IOptions<HttpClientSettings> httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory, tokenCacheService)
         {
         }
 

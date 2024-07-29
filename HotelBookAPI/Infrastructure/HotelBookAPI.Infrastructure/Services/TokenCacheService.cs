@@ -7,8 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Microsoft.Extensions.Caching.Memory;
-using HotelBookAPI.Infrastructure.Settings;
+
 using HotelBookAPI.Application.BusinessModels;
+using HotelBookAPI.Application.Settings;
+using Microsoft.Extensions.Options;
 
 namespace HotelBookAPI.Infrastructure.Services
 {
@@ -18,10 +20,10 @@ namespace HotelBookAPI.Infrastructure.Services
         private readonly HttpClientSettings _httpClientSettings;
         private readonly IMemoryCache _memoryCache;
 
-        public TokenCacheService(IHttpClientFactory httpClientFactory, HttpClientSettings httpClientSettings, IMemoryCache memoryCache)
+        public TokenCacheService(IHttpClientFactory httpClientFactory,IOptions<HttpClientSettings> httpClientSettings, IMemoryCache memoryCache)
         {
             _httpClientFactory = httpClientFactory;
-            _httpClientSettings = httpClientSettings;
+            _httpClientSettings = httpClientSettings.Value;
             _memoryCache = memoryCache;
         }
         public async Task<string> GetOrCreateAccessTokenAsync(CancellationToken cancellationToken)
