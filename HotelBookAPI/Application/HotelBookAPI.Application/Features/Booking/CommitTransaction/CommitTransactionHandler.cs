@@ -63,7 +63,7 @@ namespace HotelBookAPI.Application.Features.Booking.CommitTransaction
             display: inline-block;
             padding: 10px 20px;
             margin-top: 20px;
-            background-color: #007BFF;
+            background-color: #FF7F00;
             color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
