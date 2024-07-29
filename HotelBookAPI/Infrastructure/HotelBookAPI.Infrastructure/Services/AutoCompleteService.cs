@@ -2,7 +2,8 @@
 
 using HotelBookAPI.Application.Features.AutoComplete;
 using HotelBookAPI.Application.Interfaces;
-using HotelBookAPI.Infrastructure.Settings;
+using HotelBookAPI.Application.Settings;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace HotelBookAPI.Infrastructure.Services
     {
    
 
-        public AutoCompleteService(HttpClientSettings httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService)  :base(httpClientSettings, httpClientFactory, tokenCacheService) { }
+        public AutoCompleteService(IOptions<HttpClientSettings> httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService)  :base(httpClientSettings, httpClientFactory, tokenCacheService) { }
         
 
 

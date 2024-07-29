@@ -3,7 +3,8 @@ using HotelBookAPI.Application.Features.Product.PriceSearch;
 using HotelBookAPI.Application.Features.Product.PriceSearch.HotelSearch;
 using HotelBookAPI.Application.Features.Product.PriceSearch.LocationSearch;
 using HotelBookAPI.Application.Interfaces;
-using HotelBookAPI.Infrastructure.Settings;
+using HotelBookAPI.Application.Settings;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace HotelBookAPI.Infrastructure.Services
 {
     public class PriceSearchService : BaseHTTPService, IPriceSearchService
     {
-        public PriceSearchService(HttpClientSettings httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory, tokenCacheService)
+        public PriceSearchService(IOptions<HttpClientSettings> httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory, tokenCacheService)
         {
         }
 

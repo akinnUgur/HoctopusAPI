@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelBookAPI.Infrastructure.Settings
+namespace HotelBookAPI.Application.Settings
 {
     public class HttpClientSettings
     {

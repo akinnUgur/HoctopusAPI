@@ -2,14 +2,15 @@
 using HotelBookAPI.Application.Features.Booking.RemoveServices;
 using HotelBookAPI.Application.Interfaces;
 using HotelBookAPI.Infrastructure.Services;
-using HotelBookAPI.Infrastructure.Settings;
+using HotelBookAPI.Application.Settings;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Options;
 
 namespace HotelBookAPI.API.Controllers
 {
     public class RemoveServicesService : BaseHTTPService, IRemoveServicesService
     {
-        public RemoveServicesService(HttpClientSettings httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory, tokenCacheService)
+        public RemoveServicesService(IOptions<HttpClientSettings> httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory, tokenCacheService)
         {
         }
 
