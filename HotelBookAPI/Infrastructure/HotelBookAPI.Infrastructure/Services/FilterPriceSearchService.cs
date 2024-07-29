@@ -1,7 +1,8 @@
 ﻿using HotelBookAPI.Application.BusinessModels;
 using HotelBookAPI.Application.Features.Product.FilterPriceSearch;
 using HotelBookAPI.Application.Interfaces;
-using HotelBookAPI.Infrastructure.Settings;
+using HotelBookAPI.Application.Settings;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace HotelBookAPI.Infrastructure.Services
 {
     public class FilterPriceSearchService : BaseHTTPService, IFilterPriceSearchService
     {
-        public FilterPriceSearchService(HttpClientSettings httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory, tokenCacheService)
+        public FilterPriceSearchService(IOptions<HttpClientSettings> httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService) : base(httpClientSettings, httpClientFactory, tokenCacheService)
         {
         }
 

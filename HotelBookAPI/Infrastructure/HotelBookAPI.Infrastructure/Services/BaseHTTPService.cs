@@ -1,4 +1,5 @@
-﻿using HotelBookAPI.Infrastructure.Settings;
+﻿using HotelBookAPI.Application.Settings;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
@@ -12,9 +13,9 @@ namespace HotelBookAPI.Infrastructure.Services
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly TokenCacheService _tokenCacheService;
 
-        public BaseHTTPService(HttpClientSettings httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService)
+        public BaseHTTPService(IOptions<HttpClientSettings> httpClientSettings, IHttpClientFactory httpClientFactory, TokenCacheService tokenCacheService)
         {
-            _httpClientSettings = httpClientSettings;
+            _httpClientSettings = httpClientSettings.Value;
             _httpClientFactory = httpClientFactory;
             _tokenCacheService = tokenCacheService;
         }
