@@ -89,7 +89,7 @@ namespace HotelBookAPI.Application.Features.Booking.CommitTransaction
 </body>
 </html>";
 
-                _emailService.SendEmail(new()
+                _ = _emailService.SendEmail(new()
                 {
                     Body = emailBody,
                     Subject = "Thanks for using Hoctopus",
